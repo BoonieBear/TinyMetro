@@ -6,14 +6,54 @@
     xmlns:unsupported="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.ProgressBar" 
     xmlns:Metro="clr-namespace:BoonieBear.TinyMetro.WPF.Metro" 
     x:Class="BoonieBear.TinyMetro.WPF.Resources.MetroResourceDictionary">
-
+    <Style x:Key="SeaStyle"
+	TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush 
+		        ImageSource="..\Images\sea.jpg" TileMode="None" Stretch="Fill">
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="OpacityMask">
+        	<Setter.Value>
+        		<RadialGradientBrush>
+        			<GradientStop Color="Black" Offset="0"/>
+        			<GradientStop Color="#FF9B8282" Offset="0.812"/>
+        		</RadialGradientBrush>
+        	</Setter.Value>
+        </Setter>
+        <Setter Property="OverridesDefaultStyle" Value="False"/>
+        <Setter Property="ShowGridLines" Value="False"/>
+    </Style>
+    <Style x:Key="GlassStyle"
+	TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush 
+		        ImageSource="..\Images\skin_bk_glass.jpg">
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DefaultStyle"
+	TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush 
+		        ImageSource="..\Images\default_bk.png">
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!-- Common colors -->
 
     <!-- 87 percent Black -->
-    <Color x:Key="WinForegroundColor">#DE000000</Color>
+    <Color x:Key="WinForegroundColor">#F2000020</Color>
 
     <!-- 100 percent Light Blue -->
-    <Color x:Key="WinBackgroundColor">White</Color>
+    <Color x:Key="WinBackgroundColor">#FFEFEFEF</Color>
 
     <!-- 100 percent White-->
     <Color x:Key="WinContrastForegroundColor">#FFFFFFFF</Color>
@@ -199,25 +239,25 @@
     <System:Double x:Key="WinStrokeThickness">3</System:Double>
 
     <!-- Font names -->
-    <FontFamily x:Key="WinFontFamilyNormal">Segoe UI</FontFamily>
-    <FontFamily x:Key="WinFontFamilyLight">Segoe UI Light</FontFamily>
-    <FontFamily x:Key="WinFontFamilySemiLight">Segoe UI SemiLight</FontFamily>
-    <FontFamily x:Key="WinFontFamilySemiBold">Segoe UI Semibold</FontFamily>
+    <FontFamily x:Key="WinFontFamilyNormal">Segoe WP UI</FontFamily>
+    <FontFamily x:Key="WinFontFamilyLight">Segoe UI WP Light</FontFamily>
+    <FontFamily x:Key="WinFontFamilySemiLight">Segoe UI WP SemiLight</FontFamily>
+    <FontFamily x:Key="WinFontFamilySemiBold">Segoe UI WP Semibold</FontFamily>
 
     <!-- Font sizes -->
 
     <!--14pt-->
-    <System:Double x:Key="WinFontSizeSmall">14</System:Double>
+    <System:Double x:Key="WinFontSizeSmall">11</System:Double>
     <!--15pt-->
-    <System:Double x:Key="WinFontSizeNormal">15</System:Double>
+    <System:Double x:Key="WinFontSizeNormal">13</System:Double>
     <!--17pt-->
-    <System:Double x:Key="WinFontSizeMedium">17</System:Double>
+    <System:Double x:Key="WinFontSizeMedium">15</System:Double>
     <!--19pt-->
-    <System:Double x:Key="WinFontSizeMediumLarge">19</System:Double>
+    <System:Double x:Key="WinFontSizeMediumLarge">17</System:Double>
     <!--24pt-->
-    <System:Double x:Key="WinFontSizeLarge">24</System:Double>
+    <System:Double x:Key="WinFontSizeLarge">22</System:Double>
     <!--32pt-->
-    <System:Double x:Key="WinFontSizeExtraLarge">32</System:Double>
+    <System:Double x:Key="WinFontSizeExtraLarge">30</System:Double>
     <!--54pt-->
     <System:Double x:Key="WinFontSizeExtraExtraLarge">54</System:Double>
     <!--140pt-->
@@ -413,7 +453,7 @@
             </Storyboard>
         </Style.Resources>
         <Setter Property="FontFamily" Value="{StaticResource WinFontFamilyNormal}"/>
-        <Setter Property="FontSize" Value="{StaticResource WinFontSizeNormal}"/>
+        <Setter Property="FontSize" Value="{StaticResource WinFontSizeMediumLarge}"/>
         <Setter Property="Foreground" Value="{StaticResource WinForegroundBrush}"/>
         <Setter
 			Property="Background"
@@ -494,7 +534,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style
 		x:Key="LinksStackPanelStyle"
 		TargetType="StackPanel">
@@ -807,27 +846,27 @@
                             </Grid>
                             <Border x:Name="IndeterminateRoot" Margin="{TemplateBinding Padding}" Visibility="Collapsed">
                                 <Grid HorizontalAlignment="Left">
-                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R1" Opacity="0" CacheMode="BitmapCache">
+                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R1" Opacity="0" >
                                         <Rectangle.RenderTransform>
                                             <TranslateTransform x:Name="R1TT"/>
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
-                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R2" Opacity="0" CacheMode="BitmapCache">
+                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R2" Opacity="0" >
                                         <Rectangle.RenderTransform>
                                             <TranslateTransform x:Name="R2TT"/>
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
-                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R3" Opacity="0" CacheMode="BitmapCache">
+                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R3" Opacity="0" >
                                         <Rectangle.RenderTransform>
                                             <TranslateTransform x:Name="R3TT"/>
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
-                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R4" Opacity="0" CacheMode="BitmapCache">
+                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R4" Opacity="0" >
                                         <Rectangle.RenderTransform>
                                             <TranslateTransform x:Name="R4TT"/>
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
-                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R5" Opacity="0" CacheMode="BitmapCache">
+                                    <Rectangle Fill="{TemplateBinding Foreground}" Height="4" IsHitTestVisible="False" Width="4" x:Name="R5" Opacity="0" >
                                         <Rectangle.RenderTransform>
                                             <TranslateTransform x:Name="R5TT"/>
                                         </Rectangle.RenderTransform>
@@ -1023,12 +1062,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
                     <Grid>
-                        <Border Name="m_edgeBorder" Margin="1" Background="White" IsHitTestVisible="False" IsEnabled="False" BorderBrush="Black">
+                        <Border Name="m_edgeBorder"  Background = "{StaticResource WinBackgroundBrush}" Margin="1" IsHitTestVisible="False" IsEnabled="False" BorderBrush="Black">
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="2" ShadowDepth="0" />
-                            </Border.Effect>
+                            </Border.Effect> 
                         </Border>
-
                         <AdornerDecorator>
                             <Border Name="INNER_BORDER">
                                 <Grid x:Name="contentGrid" Background="{TemplateBinding Background}">
@@ -1037,7 +1075,7 @@
 
                                     <Rectangle Name="PART_HEADER" Height="28" VerticalAlignment="Top" Fill="Transparent" />
 
-                                    <StackPanel Margin="12" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                    <!--StackPanel Margin="12" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
                                         <Button x:Name="MinimizeButton" 
                                                 Style="{StaticResource ChromeButtonStyleHidden}" 
                                                 Padding="4"
@@ -1069,7 +1107,7 @@
                                                 x:Uid="CloseButton">
                                             <TextBlock TextWrapping="Wrap" Text="r" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
                                         </Button>
-                                    </StackPanel>
+                                    </-->
                                 </Grid>
                             </Border>
                         </AdornerDecorator>

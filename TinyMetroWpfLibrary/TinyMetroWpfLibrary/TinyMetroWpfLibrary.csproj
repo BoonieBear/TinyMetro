@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -234,6 +235,8 @@
     <Content Include="Images\appbar.save.png" />
     <Content Include="Images\appbar.stop.png" />
     <Content Include="Images\Calendar.png" />
+    <Resource Include="Images\sea.gif" />
+    <Resource Include="Images\sea.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\appbar.icons.pdn" />
@@ -287,6 +290,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blank_garbage.png" />
+    <Resource Include="Images\blank_history.png" />
+    <Resource Include="Images\blank_offline.png" />
+    <Resource Include="Images\blank_recent.png" />
+    <Resource Include="Images\skyblue_bk.jpg" />
+    <Resource Include="Images\skin_bk_glass.jpg" />
+    <Resource Include="Images\default_bk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

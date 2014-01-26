@@ -7,13 +7,23 @@
     xmlns:Metro="clr-namespace:BoonieBear.TinyMetro.WPF.Metro" 
     x:Class="BoonieBear.TinyMetro.WPF.Resources.Metro768ResourceDictionary">
 
+    <Style x:Key="GridStyle"
+	TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush 
+		        ImageSource="..\Images\user_info_bk.png">
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!-- Common colors -->
 
     <!-- 87 percent Black -->
     <Color x:Key="WinForegroundColor">#DE000000</Color>
 
     <!-- 100 percent Light Blue -->
-    <Color x:Key="WinBackgroundColor">White</Color>
+    <Color x:Key="WinBackgroundColor">#FFEFEFEF</Color>
 
     <!-- 100 percent White-->
     <Color x:Key="WinContrastForegroundColor">#FFFFFFFF</Color>
@@ -1039,7 +1049,7 @@
 
                                     <Rectangle Name="PART_HEADER" Height="28" VerticalAlignment="Top" Fill="Transparent" />
 
-                                    <StackPanel Margin="12" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                    <!--StackPanel Margin="12" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
                                         <Button x:Name="CloseButton" 
                                                 Style="{StaticResource ChromeButtonStyle}" 
                                                 Margin="4"
@@ -1054,7 +1064,7 @@
                                                 x:Uid="MinimizeButton">
                                             <TextBlock TextWrapping="Wrap" Text="0" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
                                         </Button>
-                                    </StackPanel>
+                                    </StackPanel-->
                                 </Grid>
                             </Border>
                         </AdornerDecorator>
