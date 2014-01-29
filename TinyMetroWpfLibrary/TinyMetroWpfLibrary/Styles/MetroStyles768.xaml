@@ -1049,7 +1049,7 @@
 
                                     <Rectangle Name="PART_HEADER" Height="28" VerticalAlignment="Top" Fill="Transparent" />
 
-                                    <!--StackPanel Margin="12" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                    <StackPanel Margin="12" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
                                         <Button x:Name="CloseButton" 
                                                 Style="{StaticResource ChromeButtonStyle}" 
                                                 Margin="4"
@@ -1057,14 +1057,14 @@
                                                 x:Uid="CloseButton">
                                             <TextBlock TextWrapping="Wrap" Text="r" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
                                         </Button>
-                                        <Button x:Name="MinimizeButton" 
+                                        <!--Button x:Name="MinimizeButton" 
                                                 Style="{StaticResource ChromeButtonStyleHidden}" 
                                                 Margin="4"
                                                 Command="Metro:TransparentWindow.MinimizeCommand" 
                                                 x:Uid="MinimizeButton">
                                             <TextBlock TextWrapping="Wrap" Text="0" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
-                                        </Button>
-                                    </StackPanel-->
+                                        </-->
+                                    </StackPanel>
                                 </Grid>
                             </Border>
                         </AdornerDecorator>
