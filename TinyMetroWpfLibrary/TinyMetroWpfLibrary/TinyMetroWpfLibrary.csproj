@@ -234,6 +234,7 @@
     <Content Include="Images\appbar.refresh.png" />
     <Content Include="Images\appbar.save.png" />
     <Content Include="Images\appbar.stop.png" />
+    <Resource Include="Images\bg.png" />
     <Content Include="Images\Calendar.png" />
     <Resource Include="Images\sea.gif" />
     <Resource Include="Images\sea.jpg" />

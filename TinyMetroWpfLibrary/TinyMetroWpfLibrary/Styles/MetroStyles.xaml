@@ -37,6 +37,29 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="LightGreenStyle"
+	TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush 
+		        ImageSource="..\Images\bg.png" TileMode="None" Stretch="Fill">
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="OpacityMask">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF9B8282" Offset="0.812"/>
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OverridesDefaultStyle" Value="False"/>
+        <Setter Property="ShowGridLines" Value="False"/>
+    </Style>
+    
     <Style x:Key="DefaultStyle"
 	TargetType="Grid">
         <Setter Property="Background">
@@ -1098,7 +1121,7 @@
                                                 Command="Metro:TransparentWindow.NormalizeCommand" 
                                                 x:Uid="NormalizeButton">
                                             <TextBlock TextWrapping="Wrap" Text="2" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
-                                        </Button-->
+                                        </Button>
 
                                         <Button x:Name="CloseButton" 
                                                 Style="{StaticResource ChromeButtonStyle}" 
@@ -1106,7 +1129,7 @@
                                                 Command="ApplicationCommands.Close" 
                                                 x:Uid="CloseButton">
                                             <TextBlock TextWrapping="Wrap" Text="r" FontFamily="Webdings" Foreground="#FF919191" FontSize="11" x:Uid="r_TextBlock" />
-                                        </Button>
+                                        </Button-->
                                     </StackPanel>
                                 </Grid>
                             </Border>
