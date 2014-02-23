@@ -12,7 +12,8 @@
         <Frames:AnimationFrame x:Name="ContentFrame"
                                Source="MainPageView.xaml" 
                                NavigationUIVisibility="Hidden"
-                               AnimationMode="Fade"
+                               AnimationMode="Grow"
+                               SlideorGrowDuration="0:0:0.350"
                                FadeDuration="0:0:0.150"
                                FadeOffset="0:0:0.020"/>
 

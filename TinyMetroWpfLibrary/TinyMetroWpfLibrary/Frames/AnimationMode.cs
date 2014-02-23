@@ -8,6 +8,8 @@ namespace BoonieBear.TinyMetro.WPF.Frames
     {
         Fade,
 
-        Slide
+        Slide,
+
+        Grow,
     }
 }

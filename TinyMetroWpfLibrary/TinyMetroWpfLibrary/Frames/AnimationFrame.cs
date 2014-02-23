@@ -58,13 +58,13 @@ namespace BoonieBear.TinyMetro.WPF.Frames
         #region Slide Duration Dependency Property
 
         public static readonly DependencyProperty SlideDurationProperty =
-            DependencyProperty.Register("SlideDuration", typeof(Duration), typeof(AnimationFrame),
+            DependencyProperty.Register("SlideorGrowDuration", typeof(Duration), typeof(AnimationFrame),
                 new FrameworkPropertyMetadata(new Duration(TimeSpan.FromMilliseconds(300))));
 
         /// <summary>
         /// slideDuration will be used as the duration for slide Out and slide In animations
         /// </summary>
-        public Duration SlideDuration
+        public Duration SlideorGrowDuration
         {
             get { return (Duration)GetValue(SlideDurationProperty); }
             set { SetValue(SlideDurationProperty, value); }
@@ -166,10 +166,26 @@ namespace BoonieBear.TinyMetro.WPF.Frames
                         navigationEvents.Remove(e.Uri);
                     break;
 
+                case AnimationMode.Grow:
+                    //页面平滑滑动
+                    if (!navigationEvents.Contains(e.Uri))
+                    {
+                        IsNavigating = true;
+                        e.Cancel = true;
+                        navArgs.Enqueue(e);
+                        IsHitTestVisible = contentPresenter.IsHitTestVisible = false;
+
+                        ExecuteGrowOut(e.NavigationMode);
+                    }
+                    else
+                        navigationEvents.Remove(e.Uri);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
+
+        
 
         /// <summary>
         /// Executed when the fade out has been completed
@@ -256,15 +272,19 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             slider.RenderTransform = translate;
 
             // Create the animation
-            var da = new DoubleAnimation(0.0d, target, SlideDuration)
-                         {
-                             EasingFunction = new QuarticEase { EasingMode = easingMode }
-                         };
+            var da = new DoubleAnimation(0.0d, target, SlideorGrowDuration)
+            {
+                EasingFunction = new QuarticEase { EasingMode = easingMode }
+            };
 
             // Start the Animation
             da.Completed += SlideOutCompleted;
+           // var t = new DispatcherTimer(TimeSpan.FromMilliseconds(SlideorGrowDuration.TimeSpan.TotalMilliseconds/2), DispatcherPriority.Normal, Tick, Dispatcher.CurrentDispatcher);
+
             translate.BeginAnimation(TranslateTransform.XProperty, da, HandoffBehavior.Compose);
         }
+
+       
 
         /// <summary>
         /// Method is called when the slide out has been completed
@@ -351,7 +371,7 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             slider.RenderTransform = translate;
 
             // Create the animation
-            var da = new DoubleAnimation(0.0d, SlideDuration);
+            var da = new DoubleAnimation(0.0d, SlideorGrowDuration);
             da.EasingFunction = new QuarticEase { EasingMode = easingMode };
             da.Completed += (s, ev) => IsNavigating = false;
 
@@ -359,6 +379,109 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             translate.BeginAnimation(TranslateTransform.XProperty, da, HandoffBehavior.Compose);
         }
 
+        private void ExecuteGrowOut(NavigationMode mode)
+        {
+            double target = 0;
+            var easingMode = EasingMode.EaseInOut;
+
+            var slider = contentPresenter;
+            // Create a translation Transformation for the Sliding Content
+            var translate = new ScaleTransform(0, 0,ActualWidth/2,ActualHeight/2);
+            slider.RenderTransform = translate;
+
+            // Create the animation
+            var da = new DoubleAnimation(1.0d, target, SlideorGrowDuration)
+            {
+                AccelerationRatio = 0.4,
+                DecelerationRatio = 0.4,
+                EasingFunction = new QuarticEase { EasingMode = easingMode }
+            };
+            var opda = new DoubleAnimation(0.0d, new Duration(TimeSpan.FromMilliseconds(SlideorGrowDuration.TimeSpan.TotalMilliseconds / 2)))
+            {
+               
+            };
+            // Start the Animation
+            da.Completed += GrowOutCompleted;
+            slider.BeginAnimation(OpacityProperty, opda, HandoffBehavior.Compose);
+            translate.BeginAnimation(ScaleTransform.ScaleXProperty, da, HandoffBehavior.Compose);
+            translate.BeginAnimation(ScaleTransform.ScaleYProperty, da, HandoffBehavior.Compose);
+        }
+
+        private void GrowOutCompleted(object sender, EventArgs e)
+        {
+             var clock = sender as AnimationClock;
+            if (clock != null)
+                clock.Completed -= GrowOutCompleted;
+
+
+            if (contentPresenter != null)
+            {
+                IsHitTestVisible = contentPresenter.IsHitTestVisible = true;
+
+                var nav = navArgs.Dequeue();
+                navigationEvents.Add(nav.Uri);
+
+                switch (nav.NavigationMode)
+                {
+                    case NavigationMode.New:
+                        if (nav.Uri == null)
+                        {
+                            NavigationService.Navigate(nav.Content, nav.ExtraData);
+                        }
+                        else
+                        {
+                            NavigationService.Navigate(nav.Uri, nav.ExtraData);
+                        }
+                        break;
+
+                    case NavigationMode.Back:
+                        if (NavigationService.CanGoBack)
+                            NavigationService.GoBack();
+                        break;
+
+                    case NavigationMode.Forward:
+                        if (NavigationService.CanGoForward)
+                            NavigationService.GoForward();
+                        break;
+
+                    case NavigationMode.Refresh:
+                        NavigationService.Refresh();
+                        break;
+                }
+
+                Dispatcher.BeginInvoke(DispatcherPriority.Loaded,
+                    (ThreadStart)(() => ExecuteGrowIn(nav)));
+            }
+        
+        }
+
+        private void ExecuteGrowIn(NavigatingCancelEventArgs nav)
+        {
+            double target = 1;
+            var easingMode = EasingMode.EaseInOut;
+
+            var slider = contentPresenter;
+            // Create a translation Transformation for the Sliding Content
+            var translate = new ScaleTransform(0, 0, ActualWidth / 2, ActualHeight / 2);
+            slider.RenderTransform = translate;
+
+            // Create the animation
+            var da = new DoubleAnimation(0.0d, target, SlideorGrowDuration)
+            {
+                AccelerationRatio = 0.4,
+                DecelerationRatio = 0.4,
+                EasingFunction = new QuarticEase { EasingMode = easingMode }
+            };
+            var opda = new DoubleAnimation(1.0d, new Duration(TimeSpan.FromMilliseconds(SlideorGrowDuration.TimeSpan.TotalMilliseconds / 2)))
+            {
+                BeginTime = TimeSpan.FromMilliseconds(SlideorGrowDuration.TimeSpan.TotalMilliseconds / 2),
+            };
+            da.Completed += (s, ev) => IsNavigating = false;
+            slider.BeginAnimation(OpacityProperty, opda, HandoffBehavior.Compose);
+            translate.BeginAnimation(ScaleTransform.ScaleXProperty, da, HandoffBehavior.Compose);
+            translate.BeginAnimation(ScaleTransform.ScaleYProperty, da, HandoffBehavior.Compose);
+            
+        }
         #endregion
 
         private ContentPresenter contentPresenter = null;

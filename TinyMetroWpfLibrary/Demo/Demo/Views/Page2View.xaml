@@ -8,10 +8,70 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Page2">
-
+   <Page.Resources>
+    <Style x:Key="ButtonWithCompose" TargetType="{x:Type Button}">
+        <Setter Property="Button.RenderTransform">
+            <Setter.Value>
+                <ScaleTransform CenterX="50" CenterY="50" ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard >
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleX" To="3"  />
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleY" To="3"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard HandoffBehavior="Compose">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleX" />
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleY" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    <!-- For this button style, BeginStoryboard uses the default HandoffBehavior of "SnapShotAndReplace" -->
+    <Style x:Key="ButtonWithSnapShotAndReplace" TargetType="{x:Type Button}">
+        <Setter Property="Button.RenderTransform">
+            <Setter.Value>
+                <ScaleTransform CenterX="50" CenterY="50" ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard >
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleX" To="3"  />
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleY" To="3"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleX" />
+                            <DoubleAnimation Duration="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleY" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    </Page.Resources>
     <Grid  Style="{ StaticResource DefaultStyle}">
         <StackPanel>
-            <TextBlock Text="Page2 " Style="{StaticResource WinTextTitle1Style}"/>
+            <TextBlock Text="Page2 " Style="{StaticResource WinTextNormalStyle}"/>
 
             <Button Content="Go back"
                     FontWeight="ExtraBold"
@@ -26,6 +86,12 @@
                     Margin="12 12 12 12"
                     Command="{Binding  GoPage1Command}"
                     Style="{StaticResource WinButtonStyle}"/>
+            <Button Style="{StaticResource ButtonWithSnapShotAndReplace}"  Width="100" Height="100">
+                SnapShotAndReplace
+            </Button>
+            <Button Style="{StaticResource ButtonWithCompose}" Width="100" Height="100">
+                Compose
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

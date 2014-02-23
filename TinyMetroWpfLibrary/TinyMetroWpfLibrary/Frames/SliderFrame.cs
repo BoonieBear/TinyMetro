@@ -26,7 +26,7 @@ namespace BoonieBear.TinyMetro.WPF.Frames
         #region slideDuration
 
         public static readonly DependencyProperty SlideDurationProperty =
-            DependencyProperty.Register("SlideDuration", typeof(Duration), typeof(SliderFrame),
+            DependencyProperty.Register("SlideorGrowDuration", typeof(Duration), typeof(SliderFrame),
                 new FrameworkPropertyMetadata(new Duration(TimeSpan.FromMilliseconds(300))));
 
         /// <summary>
