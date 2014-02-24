@@ -42,7 +42,7 @@ namespace Demo.ViewModels
 
         public void ExecuteGoBackCommand(object sender, ExecutedRoutedEventArgs eventArgs)
         {
-            EventAggregator.PublishMessage(new GoMainPageNavigationRequest());
+            EventAggregator.PublishMessage(new GoBackNavigationRequest());
         }
 
         #endregion

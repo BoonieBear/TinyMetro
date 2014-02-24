@@ -4,9 +4,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
@@ -24,6 +27,7 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             // watch for navigations
             Navigating += OnNavigating;
         }
+
 
         #region Fade Duration Dependency Property
 
@@ -167,7 +171,7 @@ namespace BoonieBear.TinyMetro.WPF.Frames
                     break;
 
                 case AnimationMode.Grow:
-                    //页面平滑滑动
+                    //页面缩放切换
                     if (!navigationEvents.Contains(e.Uri))
                     {
                         IsNavigating = true;
@@ -180,12 +184,152 @@ namespace BoonieBear.TinyMetro.WPF.Frames
                     else
                         navigationEvents.Remove(e.Uri);
                     break;
+                case AnimationMode.SmoothSlide:
+                    if (!navigationEvents.Contains(e.Uri))
+                    {
+                        IsNavigating = true;
+                        e.Cancel = true;
+                        navArgs.Enqueue(e);
+                        IsHitTestVisible = contentPresenter.IsHitTestVisible = false;
+                        ExecuteSmoothSlide();
+                    }
+                    else
+                        navigationEvents.Remove(e.Uri);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        
+        private void ExecuteSmoothSlide()
+        {
+            FrameworkElement srcElement = contentPresenter;
+            RenderTargetBitmap rtb = RenderBitmap(srcElement);
+            
+
+            item = new Rectangle()
+            {
+                Fill = new ImageBrush(BitmapFrame.Create(rtb))
+            };
+
+            if (contentPresenter != null)
+            {
+                IsHitTestVisible = contentPresenter.IsHitTestVisible = true;
+
+                
+
+                Dispatcher.BeginInvoke(DispatcherPriority.Loaded, 
+                    (ThreadStart)(AnimationFrame_Navigated));
+
+            }
+        }
+
+        private void AnimationFrame_Navigated()
+        {
+            var nav = navArgs.Dequeue();
+            navigationEvents.Add(nav.Uri);
+
+            switch (nav.NavigationMode)
+            {
+                case NavigationMode.New:
+                    target = -ActualWidth;
+                    if (nav.Uri == null)
+                    {
+                        NavigationService.Navigate(nav.Content, nav.ExtraData);
+                    }
+                    else
+                    {
+                        NavigationService.Navigate(nav.Uri, nav.ExtraData);
+                    }
+                    break;
+
+                case NavigationMode.Back:
+                    target = ActualWidth;
+                    if (NavigationService.CanGoBack)
+                        NavigationService.GoBack();
+                    break;
+
+                case NavigationMode.Forward:
+                    if (NavigationService.CanGoForward)
+                        NavigationService.GoForward();
+                    break;
+
+                case NavigationMode.Refresh:
+                    NavigationService.Refresh();
+                    break;
+            }
+            var container = Parent as Grid;
+            if (container != null)
+            {
+                container.Children.Add(item);
+                BeginSlideAnimation(item, target, container);
+
+            }
+        }
+
+
+        private void BeginSlideAnimation(Rectangle item1,double target, Grid container)
+        {
+            item = item1;
+            mainGrid = container;
+            // Create a translation Transformation for the Sliding Content
+            var srctranslate = new TranslateTransform(0, 0);
+            item.RenderTransform = srctranslate;
+
+            // Create the animation
+            var srcda = new DoubleAnimation(0.0d, target, SlideorGrowDuration)
+            {
+                EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
+            };
+            //Begin animation
+            srctranslate.BeginAnimation(TranslateTransform.XProperty, srcda, HandoffBehavior.Compose);
+            var dstslider = contentPresenter;
+
+            // Create a translation Transformation for the Sliding Content
+            var dsttranslate = new TranslateTransform(0, 0);
+            dstslider.RenderTransform = dsttranslate;
+
+            // Create the animation
+            var dstda = new DoubleAnimation(-target, 0.0d, SlideorGrowDuration)
+            {
+                EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
+            };
+            dstda.Completed += (sender, e) =>
+            {
+                
+                item.Fill = null;
+                mainGrid.Children.Remove(item);
+                IsNavigating = false;
+            };
+            dsttranslate.BeginAnimation(TranslateTransform.XProperty, dstda, HandoffBehavior.Compose);
+            
+            
+
+        }
+
+        public RenderTargetBitmap RenderBitmap(FrameworkElement element)
+        {
+            double topLeft = 0;
+            double topRight = 0;
+            int width = (int)element.ActualWidth;
+            int height = (int)element.ActualHeight;
+            double dpiX = 96; // this is the magic number
+            double dpiY = 96; // this is the magic number
+
+            PixelFormat pixelFormat = PixelFormats.Default;
+            VisualBrush elementBrush = new VisualBrush(element);
+            DrawingVisual visual = new DrawingVisual();
+            DrawingContext dc = visual.RenderOpen();
+
+            dc.DrawRectangle(elementBrush, null, new Rect(topLeft, topRight, width, height));
+            dc.Close();
+
+            RenderTargetBitmap bitmap = new RenderTargetBitmap(width, height, dpiX, dpiY, pixelFormat);
+
+            bitmap.Render(visual);
+            return bitmap;
+        } 
+        #region FadeOutMode
 
         /// <summary>
         /// Executed when the fade out has been completed
@@ -200,8 +344,8 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             //   3. invoke the FadeIn animation at Loaded priority
             var clock = sender as AnimationClock;
             if (clock != null)
-                clock.Completed -= OnFadeOutCompleted; 
-            
+                clock.Completed -= OnFadeOutCompleted;
+
             if (contentPresenter != null)
             {
                 IsHitTestVisible = contentPresenter.IsHitTestVisible = true;
@@ -238,12 +382,16 @@ namespace BoonieBear.TinyMetro.WPF.Frames
                 }
 
                 // Start Animation
-                var da = new DoubleAnimation(1.0d, FadeDuration) { AccelerationRatio = 1.0d };
+                var da = new DoubleAnimation(1.0d, FadeDuration) {AccelerationRatio = 1.0d};
                 da.Completed += (s, ev) => IsNavigating = false;
                 contentPresenter.BeginAnimation(OpacityProperty, da, HandoffBehavior.Compose);
             }
         }
 
+        #endregion
+
+
+        #region slidemode
         /// <summary>
         /// Executes the first transition.
         /// </summary>
@@ -378,7 +526,9 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             // Start the Animation
             translate.BeginAnimation(TranslateTransform.XProperty, da, HandoffBehavior.Compose);
         }
+        #endregion
 
+        #region GrowMode
         private void ExecuteGrowOut(NavigationMode mode)
         {
             double target = 0;
@@ -392,8 +542,8 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             // Create the animation
             var da = new DoubleAnimation(1.0d, target, SlideorGrowDuration)
             {
-                AccelerationRatio = 0.4,
-                DecelerationRatio = 0.4,
+
+                DecelerationRatio = 0.6,
                 EasingFunction = new QuarticEase { EasingMode = easingMode }
             };
             var opda = new DoubleAnimation(0.0d, new Duration(TimeSpan.FromMilliseconds(SlideorGrowDuration.TimeSpan.TotalMilliseconds / 2)))
@@ -449,8 +599,9 @@ namespace BoonieBear.TinyMetro.WPF.Frames
                         break;
                 }
 
-                Dispatcher.BeginInvoke(DispatcherPriority.Loaded,
-                    (ThreadStart)(() => ExecuteGrowIn(nav)));
+                    Dispatcher.BeginInvoke(DispatcherPriority.Loaded,
+                        (ThreadStart) (() => ExecuteGrowIn(nav)));
+
             }
         
         }
@@ -484,8 +635,15 @@ namespace BoonieBear.TinyMetro.WPF.Frames
         }
         #endregion
 
+        #endregion
+
+        double target = 0;
+        private  static object lockobject =new object();
+        private Rectangle item;
+        private Grid mainGrid;
         private ContentPresenter contentPresenter = null;
         private readonly HashSet<Uri> navigationEvents = new HashSet<Uri>();
         private readonly Queue<NavigatingCancelEventArgs> navArgs = new Queue<NavigatingCancelEventArgs>();
+        
     }
 }

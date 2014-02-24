@@ -11,5 +11,6 @@ namespace BoonieBear.TinyMetro.WPF.Frames
         Slide,
 
         Grow,
+        SmoothSlide,
     }
 }
