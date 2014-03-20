@@ -13,7 +13,7 @@
                                Source="MainPageView.xaml" 
                                NavigationUIVisibility="Hidden"
                                AnimationMode="SmoothSlide"
-                               SlideorGrowDuration="0:0:1.350"
+                               SlideorGrowDuration="0:0:0.350"
                                FadeDuration="0:0:0.150"
                                FadeOffset="0:0:0.020"/>
 

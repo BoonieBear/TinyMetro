@@ -262,49 +262,89 @@ namespace BoonieBear.TinyMetro.WPF.Frames
             if (container != null)
             {
                 container.Children.Add(item);
-                BeginSlideAnimation(item, target, container);
+                //变小
+                var srctranslate = new ScaleTransform(1, 1,ActualWidth/2,ActualHeight/2);
+                var translate = new TranslateTransform(0, 0);
+                var srcgrouptranslate = new TransformGroup();
+                srcgrouptranslate.Children.Add(srctranslate);
+                srcgrouptranslate.Children.Add(translate);
+                item.RenderTransform = srcgrouptranslate;
+
+                // Create the animation
+                var srcda = new DoubleAnimation(1.0d, 0.9d, SlideorGrowDuration)
+                {
+                    EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
+                };
+                //Begin animation
+                srctranslate.BeginAnimation(ScaleTransform.ScaleXProperty, srcda, HandoffBehavior.Compose);
+                srctranslate.BeginAnimation(ScaleTransform.ScaleYProperty, srcda, HandoffBehavior.Compose);
+                var dstslider = contentPresenter;
+
+                // Create a translation Transformation for the Sliding Content
+                var dstScaletranslate = new ScaleTransform(1, 1, ActualWidth / 2, ActualHeight / 2);
+                var dsttranslate = new TranslateTransform(0, 0);
+                var dstgrouptranslate = new TransformGroup();
+                dstgrouptranslate.Children.Add(dstScaletranslate);
+                dstgrouptranslate.Children.Add(dsttranslate);
+                dstslider.RenderTransform = dstgrouptranslate;
+
+                // Create the animation
+                var dstda = new DoubleAnimation(1.0d, 0.9d, SlideorGrowDuration)
+                {
+                    EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
+                    
+                };
+                dstda.Completed += (sender,e) => BeginSlideAnimation(item, target, container,srcgrouptranslate,dstgrouptranslate);
+
+                //Begin animation
+                dstScaletranslate.BeginAnimation(ScaleTransform.ScaleXProperty, dstda, HandoffBehavior.Compose);
+                dstScaletranslate.BeginAnimation(ScaleTransform.ScaleYProperty, dstda, HandoffBehavior.Compose);
 
             }
         }
 
 
-        private void BeginSlideAnimation(Rectangle item1,double target, Grid container)
+        private void BeginSlideAnimation(Rectangle item1,double target, Grid container,TransformGroup rectGroup,TransformGroup dstGroup)
         {
             item = item1;
             mainGrid = container;
-            // Create a translation Transformation for the Sliding Content
-            var srctranslate = new TranslateTransform(0, 0);
-            item.RenderTransform = srctranslate;
-
             // Create the animation
-            var srcda = new DoubleAnimation(0.0d, target, SlideorGrowDuration)
+            var doubleAnimation = new DoubleAnimation(0.0d, target, SlideorGrowDuration)
             {
                 EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
             };
             //Begin animation
-            srctranslate.BeginAnimation(TranslateTransform.XProperty, srcda, HandoffBehavior.Compose);
-            var dstslider = contentPresenter;
-
-            // Create a translation Transformation for the Sliding Content
-            var dsttranslate = new TranslateTransform(0, 0);
-            dstslider.RenderTransform = dsttranslate;
-
+            rectGroup.Children[1].BeginAnimation(TranslateTransform.XProperty, doubleAnimation, HandoffBehavior.Compose);
+            
+            
             // Create the animation
             var dstda = new DoubleAnimation(-target, 0.0d, SlideorGrowDuration)
             {
                 EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
             };
-            dstda.Completed += (sender, e) =>
+           
+            dstGroup.Children[1].BeginAnimation(TranslateTransform.XProperty, dstda, HandoffBehavior.Compose);
+            //变大
+            
+            var scaleda = new DoubleAnimation(0.9d, 1.0d, SlideorGrowDuration)
             {
-                
+                BeginTime = SlideorGrowDuration.TimeSpan,
+                EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseIn }
+            };
+            scaleda.Completed += (sender, e) =>
+            {
+
                 item.Fill = null;
                 mainGrid.Children.Remove(item);
                 IsNavigating = false;
             };
-            dsttranslate.BeginAnimation(TranslateTransform.XProperty, dstda, HandoffBehavior.Compose);
+            //Begin animation
+            rectGroup.Children[0].BeginAnimation(ScaleTransform.ScaleXProperty, scaleda, HandoffBehavior.Compose);
+            rectGroup.Children[0].BeginAnimation(ScaleTransform.ScaleYProperty, scaleda, HandoffBehavior.Compose);
+            dstGroup.Children[0].BeginAnimation(ScaleTransform.ScaleXProperty, scaleda, HandoffBehavior.Compose);
+            dstGroup.Children[0].BeginAnimation(ScaleTransform.ScaleYProperty, scaleda, HandoffBehavior.Compose);
             
-            
-
+       
         }
 
         public RenderTargetBitmap RenderBitmap(FrameworkElement element)
