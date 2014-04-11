@@ -14,7 +14,7 @@
 
             <!-- Locale Static Resources -->
             <Core:TestViewModelLocator x:Key="ViewModelLocator"/>
-
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         </ResourceDictionary>
         
     </Application.Resources>

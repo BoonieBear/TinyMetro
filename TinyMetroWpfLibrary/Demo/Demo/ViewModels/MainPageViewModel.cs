@@ -15,11 +15,15 @@ namespace Demo.ViewModels
         {
             GoPage1Command = RegisterCommand(ExecuteGoPage1Command, CanExecuteGoPage1Command, true);
             GoBackCommand = RegisterCommand(ExecuteGoBackCommand, CanExecuteGoBackCommand, true);
+        
         }
 
 
         public override void InitializePage(object extraData)
         {
+            Error = "Some error!";
+            IsLoading = true;
+            ExecuteAsync(() => IsLoading = false, 2000);
         }
 
         #endregion
