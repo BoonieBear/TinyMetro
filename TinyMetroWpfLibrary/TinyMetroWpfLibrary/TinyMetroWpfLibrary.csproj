@@ -68,6 +68,7 @@
     <Compile Include="Controls\ErrorBar\DisplayErrorBar.xaml.cs">
       <DependentUpon>DisplayErrorBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TextBox\MaskedTextBox.cs" />
     <Compile Include="Controls\Panels\TouchableScrollViewer.cs" />
     <Compile Include="Controls\Picker\DatePicker.xaml.cs">
       <SubType>Code</SubType>
@@ -160,6 +161,9 @@
     </Compile>
     <Compile Include="Controls\ProgressBar\RelativeAnimatingContentControl.cs" />
     <Compile Include="Controls\TextBox\ExtendedTextBox.cs" />
+    <Compile Include="Controls\TouchKeyBoard\TabKeyBoard.xaml.cs">
+      <DependentUpon>TabKeyBoard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\WindowedControl\WindowedItemsControl.cs" />
     <Compile Include="Controls\WindowedControl\WindowedItemsControl.Manipulation.cs" />
     <Compile Include="Controls\WindowedControl\WindowedItemsControl.Mouse.cs" />
@@ -283,6 +287,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\TouchKeyBoard\TabKeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\MetroStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -293,12 +301,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\blank_garbage.png" />
-    <Resource Include="Images\blank_history.png" />
-    <Resource Include="Images\blank_offline.png" />
-    <Resource Include="Images\blank_recent.png" />
     <Resource Include="Images\skyblue_bk.jpg" />
-    <Resource Include="Images\skin_bk_glass.jpg" />
     <Resource Include="Images\default_bk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,223 @@
+﻿<UserControl x:Class="BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard.TabKeyBoardControl" x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="480">
+    <UserControl.Resources>
+        <Style x:Key="FullKeyboardStyle1" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Margin" Value="1,1,1,1" />
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="36" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FullKeyboardStyle2" TargetType="Path">
+            <Setter Property="Stroke" Value="#FF787878" />
+            <Setter Property="Fill" Value="#FFC8C8C8" />
+            <Setter Property="StrokeThickness" Value="0.8" />
+            <Setter Property="StrokeStartLineCap" Value="Round" />
+            <Setter Property="StrokeEndLineCap" Value="Round" />
+            <Setter Property="StrokeLineJoin" Value="Round" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="1,0,1,0" />
+        </Style>
+        <Style x:Key="FullKeyboardStyle3" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0,0,0,0" />
+            <Setter Property="Margin" Value="4,1,0.5,1" />
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="IsTabStop" Value="False" />
+        </Style>
+        <Style x:Key="FullKeyboardStyle4" TargetType="Path">
+            <Setter Property="Stroke" Value="#FF787878" />
+            <Setter Property="Fill" Value="#FFC8C8C8" />
+            <Setter Property="StrokeThickness" Value="0.8" />
+            <Setter Property="StrokeStartLineCap" Value="Round" />
+            <Setter Property="StrokeEndLineCap" Value="Round" />
+            <Setter Property="StrokeLineJoin" Value="Round" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="1.5,3,1.5,3" />
+        </Style>
+        <Style x:Key="CloseButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Canvas Height="20">
+                            <Rectangle Width="40" Height="20" Stroke="Black" RadiusX="3" RadiusY="3" Fill="LightGray"></Rectangle>
+                            <Line X1="13" Y1="3" X2="27" Y2="17" Stroke="White" StrokeThickness="2"></Line>
+                            <Line X1="27" Y1="3" X2="13" Y2="17" Stroke="White" StrokeThickness="2"></Line>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="NumColumn" />
+            <ColumnDefinition x:Name="CharColumn" />
+            <ColumnDefinition x:Name="PunctColumn" />
+        </Grid.ColumnDefinitions>
+        <!-- Grid for the Numric Keyboard -->
+        <Grid Grid.Column="0" x:Name="grdNumericKeyboard" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="PunctButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="@/#" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010100" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="7" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010101" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="8" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010102" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="9" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="EngButton" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Content="En" Click="cmdButton_Click" ClickMode="Release" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btn010401" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="." Click="cmdButton_Click" ClickMode="Release"/>
+
+                <Button x:Name="btn010200" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="4" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010201" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="5" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010202" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="6" Click="cmdButton_Click" ClickMode="Release" />
+                <!-- Left arrow Key -->
+                <Button x:Name="btn010203" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="80" Height="50">
+                        <Path Style="{StaticResource FullKeyboardStyle2}">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,25" IsClosed="True">
+                                            <LineSegment Point="15,15"></LineSegment>
+                                            <LineSegment Point="15,20"></LineSegment>
+                                            <LineSegment Point="60,20"></LineSegment>
+                                            <LineSegment Point="60,30"></LineSegment>
+                                            <LineSegment Point="15,30"></LineSegment>
+                                            <LineSegment Point="15,35"></LineSegment>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="StarButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="*" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010300" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="1" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010301" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="2" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="btn010302" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="3" Click="cmdButton_Click" ClickMode="Release" />
+                <!-- Right arrow Key -->
+                <Button x:Name="btn010303"  Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="80" Height="50">
+                        <Path Style="{StaticResource FullKeyboardStyle2}">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,20" IsClosed="True">
+                                            <LineSegment Point="45,20"></LineSegment>
+                                            <LineSegment Point="45,15"></LineSegment>
+                                            <LineSegment Point="60,25"></LineSegment>
+                                            <LineSegment Point="45,35"></LineSegment>
+                                            <LineSegment Point="45,30"></LineSegment>
+                                            <LineSegment Point="0,30"></LineSegment>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="PlusButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="+" Click="cmdButton_Click" ClickMode="Release" />
+
+                <Button x:Name="btn010103" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="-" Click="cmdButton_Click" ClickMode="Release"/>
+                <Button x:Name="btn010400" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="0" Click="cmdButton_Click" ClickMode="Release"/>
+                <Button x:Name="BlankButton" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="80" Height="50">
+                        <Path Style="{StaticResource FullKeyboardStyle2}">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="10,30">
+                                            <LineSegment Point="10,40"></LineSegment>
+                                            <LineSegment Point="40,40"></LineSegment>
+                                            <LineSegment Point="40,30"></LineSegment>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Button>
+                <!-- BackSpace Button -->
+                <Button x:Name="btn010402" Grid.Column="4" Style="{StaticResource FullKeyboardStyle3}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="80" Height="35">
+                        <Path Style="{StaticResource FullKeyboardStyle4}">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="20,0" IsClosed="True">
+                                            <LineSegment Point="60,0"></LineSegment>
+                                            <LineSegment Point="60,30"></LineSegment>
+                                            <LineSegment Point="20,30"></LineSegment>
+                                            <LineSegment Point="0,15"></LineSegment>
+                                        </PathFigure>
+                                        <PathFigure StartPoint="20,5">
+                                            <LineSegment Point="55,25"></LineSegment>
+                                        </PathFigure>
+                                        <PathFigure StartPoint="55,5">
+                                            <LineSegment Point="20,25"></LineSegment>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Button>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
