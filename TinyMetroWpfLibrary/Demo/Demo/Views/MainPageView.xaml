@@ -29,6 +29,9 @@
 				Style="{StaticResource WinButtonStyle}" HorizontalAlignment="Left"/>
             <ProgressBar Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
                      Style="{StaticResource PerformanceProgressBar}"/>
+            <TextBox HorizontalAlignment="Center" Width="100">
+                
+            </TextBox>
         </StackPanel>
 
     </Grid>

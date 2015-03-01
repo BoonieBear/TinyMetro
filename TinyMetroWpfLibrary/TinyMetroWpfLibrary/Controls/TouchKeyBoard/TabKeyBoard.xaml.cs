@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Controls;
@@ -18,7 +19,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
     /// <summary>
     /// TouchScreenTextBox.xaml 的交互逻辑
     /// </summary>
-    internal partial class TabKeyBoardControl : UserControl
+    internal partial class TabKeyBoardControl : System.Windows.Controls.UserControl
     {
         #region Private data
 
@@ -355,25 +356,6 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
 
         #endregion Public Methods
 
-        #region Keyboard Constants
-
-        private const uint KEYEVENTF_KEYUP = 0x2;  // Release key
-        private const byte VK_BACK = 0x8;          // back space
-        private const byte VK_LEFT = 0x25;
-        private const byte VK_RIGHT = 0x27;
-        private const byte VK_0 = 0x30;
-        private const byte VK_1 = 0x31;
-        private const byte VK_2 = 0x32;
-        private const byte VK_3 = 0x33;
-        private const byte VK_4 = 0x34;
-        private const byte VK_5 = 0x35;
-        private const byte VK_6 = 0x36;
-        private const byte VK_7 = 0x37;
-        private const byte VK_8 = 0x38;
-        private const byte VK_9 = 0x39;
-
-        #endregion Keyboard Constants
-
         #region Keyboard Private Methods
 
         /// <summary>
@@ -385,116 +367,334 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
         {
             try
             {
-                Button key = (Button)sender;
+                var key = (System.Windows.Controls.Button)sender;
 
                 switch (key.Name)
                 {
                     // Number 1
                     case "btn010300":
-                        keybd_event(VK_1, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_1, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad1);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 2
                     case "btn010301":
-                        keybd_event(VK_2, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_2, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad2);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 3
                     case "btn010302":
-                        keybd_event(VK_3, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_3, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad3);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 4
                     case "btn010200":
-                        keybd_event(VK_4, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_4, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad4);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 5
                     case "btn010201":
-                        keybd_event(VK_5, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_5, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad5);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 6
                     case "btn010202":
-                        keybd_event(VK_6, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_6, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad6);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 7
                     case "btn010100":
-                        keybd_event(VK_7, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_7, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad7);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 8
                     case "btn010101":
-                        keybd_event(VK_8, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_8, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad8);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 9
                     case "btn010102":
-                        keybd_event(VK_9, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_9, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad9);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Number 0
                     case "btn010400":
-                        keybd_event(VK_0, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_0, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.NumPad0);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Symbol minus sign
+                    case "SubButton":
+                    case "Subbtn":
                     case "btn010103":
-                        keybd_event(0xbd, 0, 0, (UIntPtr)0);
-                        keybd_event(0xbd, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.OemMinus);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Back Space
+                    case "Backbtn":
+                    case "backbtn":
                     case "btn010402":
-                        keybd_event(VK_BACK, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_BACK, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.Back);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Left arrow Key
                     case "btn010203":
-                        keybd_event(VK_LEFT, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_LEFT, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.Left);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Right arrow Key
                     case "btn010303":
-                        keybd_event(VK_RIGHT, 0, 0, (UIntPtr)0);
-                        keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.Right);
                         // event already handle
                         e.Handled = true;
                         break;
                     // Symbol full stop
+                    case "Decbtn":
+                    case "Decbtn2":
                     case "btn010401":
-                        keybd_event(0xbe, 0, 0, (UIntPtr)0);
-                        keybd_event(0xbe, 0, KEYEVENTF_KEYUP, (UIntPtr)0);
+                        PressKey(Keys.Decimal);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "blank3btn":
+                    case "blank2btn":
+                    case "BlankButton":
+                        PressKey(Keys.Space);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "Exclbtn":
+                        PressMultiKey(Keys.ShiftKey,Keys.Oem1);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "Commabtn2":
+                    case "Commabtn":
+                        PressKey(Keys.Oemcomma);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "sharpbtn":
+                        PressMultiKey(Keys.ShiftKey,Keys.Oem3);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "starbtn":
+                    case "StarButton":
+                        PressKey(Keys.Multiply);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "Pipebtn":
+                        PressKey(Keys.OemPipe);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "slashbtn2":
+                    case "slashbtn":
+                        PressKey(Keys.Separator);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "backslashbtn":
+                    case "bslashbtn":
+                        PressKey(Keys.OemBackslash);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "Sembtn":
+                        PressKey(Keys.OemSemicolon);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "maobtn":
+                        PressMultiKey(Keys.ShiftKey,Keys.OemSemicolon);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "Qustbtn":
+                        PressKey(Keys.OemQuestion);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "downLinebtn":
+                    case "Downslashbtn":
+                        PressMultiKey(Keys.ShiftKey, Keys.Subtract);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "plusbtn":
+                    case "Addbtn":
+                        PressKey(Keys.Oemplus);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "openbrackbtn":
+                    case "leftbracketbtn":
+                        PressKey(Keys.OemOpenBrackets);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "rightbracketbtn":
+                    case "closebrackbtn":
+                        PressKey(Keys.OemCloseBrackets);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    //char
+                    case "abtn":
+                        PressKey(Keys.A);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "bbtn":
+                        PressKey(Keys.B);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "cbtn":
+                        PressKey(Keys.C);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "dbtn":
+                        PressKey(Keys.D);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "ebtn":
+                        PressKey(Keys.E);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "fbtn":
+                        PressKey(Keys.F);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "gbtn":
+                        PressKey(Keys.G);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "hbtn":
+                        PressKey(Keys.H);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "ibtn":
+                        PressKey(Keys.I);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "jbtn":
+                        PressKey(Keys.J);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "kbtn":
+                        PressKey(Keys.K);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "lbtn":
+                        PressKey(Keys.L);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "mbtn":
+                        PressKey(Keys.M);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "nbtn":
+                        PressKey(Keys.N);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "obtn":
+                        PressKey(Keys.O);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "pbtn":
+                        PressKey(Keys.P);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "qbtn":
+                        PressKey(Keys.Q);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "rbtn":
+                        PressKey(Keys.R);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "sbtn":
+                        PressKey(Keys.S);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "tbtn":
+                        PressKey(Keys.T);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "ubtn":
+                        PressKey(Keys.U);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "vbtn":
+                        PressKey(Keys.V);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "wbtn":
+                        PressKey(Keys.W);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "xbtn":
+                        PressKey(Keys.X);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "ybtn":
+                        PressKey(Keys.Y);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "zbtn":
+                        PressKey(Keys.Z);
+                        // event already handle
+                        e.Handled = true;
+                        break;
+                    case "percentbtn":
+                        PressMultiKey(Keys.ShiftKey,Keys.Oem5);
+                        e.Handled = true;
+                        break;
+                    case "equebtn":
+                        keybd_event((byte)0x61, 0, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+                        keybd_event((byte)0x61, 0, KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
                         // event already handle
                         e.Handled = true;
                         break;
                     // punctuation key
+                    case "Puctbtn":
                     case "PunctButton":
                         this.Type = KeyboardType.Punc;
                         // event already handle
@@ -506,12 +706,31 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         // event already handle
                         e.Handled = true;
                         break;
+                    case "retbtn":
+                        this.Type = _lastType;
+                        // event already handle
+                        e.Handled = true;
+                        break;
                 }
             }
             catch
             {
                 // Any exception handling here.  Otherwise, swallow the exception.
             }
+        }
+        private const int KEYEVENTF_EXTENDEDKEY = 1;
+        private const int KEYEVENTF_KEYUP = 2;
+        private void PressMultiKey(Keys key1, Keys key2)
+        {
+            keybd_event((byte)key1, 0, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+            keybd_event((byte)key2, 0, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+            keybd_event((byte)key1, 0, KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+            keybd_event((byte)key2, 0, KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+        }
+        private void PressKey(Keys key)
+        {
+            keybd_event((byte)key, 0, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+            keybd_event((byte)key, 0, KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
         }
 
         /// <summary>
