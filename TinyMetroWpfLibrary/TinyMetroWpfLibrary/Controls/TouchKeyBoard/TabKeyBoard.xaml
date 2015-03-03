@@ -9,14 +9,14 @@
         <Style x:Key="FullKeyboardStyle1" TargetType="Button">
             <Setter Property="FontFamily" Value="Segoe UI" />
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontSize" Value="24" />
             <Setter Property="BorderThickness" Value="1,1,1,1" />
             <Setter Property="Margin" Value="1,1,1,1" />
             <Setter Property="Focusable" Value="False" />
             <Setter Property="IsTabStop" Value="False" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="FontSize" Value="36" />
+                    <Setter Property="FontSize" Value="38" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -67,7 +67,7 @@
     </UserControl.Resources>
     <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="NumColumn" />
+            <ColumnDefinition x:Name="NumColumn" Width="{Binding ActualWidth, ElementName=MainGrid, Mode=OneWay}" />
             <ColumnDefinition x:Name="CharColumn" />
             <ColumnDefinition x:Name="PunctColumn" />
         </Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="PunctButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="@#" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="PunctButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="@/#" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="btn010100" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="7" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="btn010101" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="8" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="btn010102" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="9" Click="cmdButton_Click" ClickMode="Release" />
@@ -108,7 +108,7 @@
                 <Button x:Name="btn010202" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="6" Click="cmdButton_Click" ClickMode="Release" />
                 <!-- Left arrow Key -->
                 <Button x:Name="btn010203" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="50">
+                    <Canvas Width="60" Height="50">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -116,8 +116,8 @@
                                         <PathFigure StartPoint="0,25" IsClosed="True">
                                             <LineSegment Point="15,15"></LineSegment>
                                             <LineSegment Point="15,20"></LineSegment>
-                                            <LineSegment Point="60,20"></LineSegment>
-                                            <LineSegment Point="60,30"></LineSegment>
+                                            <LineSegment Point="50,20"></LineSegment>
+                                            <LineSegment Point="50,30"></LineSegment>
                                             <LineSegment Point="15,30"></LineSegment>
                                             <LineSegment Point="15,35"></LineSegment>
                                         </PathFigure>
@@ -142,23 +142,25 @@
                 <Button x:Name="btn010302" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="3" Click="cmdButton_Click" ClickMode="Release" />
                 <!-- Right arrow Key -->
                 <Button x:Name="btn010303"  Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="50">
-                        <Path Style="{StaticResource FullKeyboardStyle2}">
-                            <Path.Data>
-                                <GeometryGroup>
-                                    <PathGeometry>
-                                        <PathFigure StartPoint="0,20" IsClosed="True">
-                                            <LineSegment Point="45,20"></LineSegment>
-                                            <LineSegment Point="45,15"></LineSegment>
-                                            <LineSegment Point="60,25"></LineSegment>
-                                            <LineSegment Point="45,35"></LineSegment>
-                                            <LineSegment Point="45,30"></LineSegment>
-                                            <LineSegment Point="0,30"></LineSegment>
-                                        </PathFigure>
-                                    </PathGeometry>
-                                </GeometryGroup>
-                            </Path.Data>
-                        </Path>
+                    <Canvas Width="60" Height="50">
+                        <Viewbox>
+                            <Path Style="{StaticResource FullKeyboardStyle2}">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <PathGeometry>
+                                            <PathFigure StartPoint="0,20" IsClosed="True">
+                                                <LineSegment Point="35,20"></LineSegment>
+                                                <LineSegment Point="35,15"></LineSegment>
+                                                <LineSegment Point="50,25"></LineSegment>
+                                                <LineSegment Point="35,35"></LineSegment>
+                                                <LineSegment Point="35,30"></LineSegment>
+                                                <LineSegment Point="0,30"></LineSegment>
+                                            </PathFigure>
+                                        </PathGeometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Viewbox>
                     </Canvas>
                 </Button>
             </Grid>
@@ -175,44 +177,46 @@
                 <Button x:Name="btn010103" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="-" Click="cmdButton_Click" ClickMode="Release"/>
                 <Button x:Name="btn010400" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="0" Click="cmdButton_Click" ClickMode="Release"/>
                 <Button x:Name="BlankButton" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="50">
-                        <Path Style="{StaticResource FullKeyboardStyle2}">
-                            <Path.Data>
-                                <GeometryGroup>
-                                    <PathGeometry>
-                                        <PathFigure StartPoint="10,30">
-                                            <LineSegment Point="10,40"></LineSegment>
-                                        </PathFigure>
-                                        <PathFigure StartPoint="10,40">
-                                            <LineSegment Point="40,40"></LineSegment>
-                                        </PathFigure>
-                                        <PathFigure StartPoint="40,40">
-                                            <LineSegment Point="40,30"></LineSegment>
-                                        </PathFigure>
-                                    </PathGeometry>
-                                </GeometryGroup>
-                            </Path.Data>
-                        </Path>
-                    </Canvas>
+                    <Viewbox  Stretch="Fill" Margin="5,0">
+                            <Path Style="{StaticResource FullKeyboardStyle2}">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <PathGeometry>
+                                            <PathFigure StartPoint="0,30">
+                                                <LineSegment Point="0,40"></LineSegment>
+                                            </PathFigure>
+                                            <PathFigure StartPoint="0,40">
+                                                <LineSegment Point="35,40"></LineSegment>
+                                            </PathFigure>
+                                            <PathFigure StartPoint="35,40">
+                                                <LineSegment Point="35,30"></LineSegment>
+                                            </PathFigure>
+                                        </PathGeometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        
+                    </Viewbox>
                 </Button>
                 <!-- BackSpace Button -->
-                <Button x:Name="btn010402" Grid.Column="4" Style="{StaticResource FullKeyboardStyle3}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="35">
+                <Button x:Name="btn010402" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="60" Height="35">
                         <Path Style="{StaticResource FullKeyboardStyle4}">
                             <Path.Data>
                                 <GeometryGroup>
                                     <PathGeometry>
-                                        <PathFigure StartPoint="20,0" IsClosed="True">
-                                            <LineSegment Point="60,0"></LineSegment>
-                                            <LineSegment Point="60,30"></LineSegment>
-                                            <LineSegment Point="20,30"></LineSegment>
+                                        <PathFigure StartPoint="15,5">
+                                            <LineSegment Point="50,5"></LineSegment>
+                                            <LineSegment Point="50,25"></LineSegment>
+                                            <LineSegment Point="15,25"></LineSegment>
                                             <LineSegment Point="0,15"></LineSegment>
+                                            <LineSegment Point="15,5"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="20,5">
-                                            <LineSegment Point="55,25"></LineSegment>
+                                        <PathFigure StartPoint="20,10">
+                                            <LineSegment Point="45,20"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="55,5">
-                                            <LineSegment Point="20,25"></LineSegment>
+                                        <PathFigure StartPoint="45,10">
+                                            <LineSegment Point="20,20"></LineSegment>
                                         </PathFigure>
                                     </PathGeometry>
                                 </GeometryGroup>
@@ -232,7 +236,6 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -243,9 +246,10 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="slashbtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="\" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="slashbtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="/" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="qbtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="q" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="wbtn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="w" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="ebtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="e" Click="cmdButton_Click" ClickMode="Release" />
@@ -256,11 +260,11 @@
                 <Button x:Name="ibtn" Grid.Column="8" Style="{StaticResource FullKeyboardStyle1}" Content="i" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="obtn" Grid.Column="9" Style="{StaticResource FullKeyboardStyle1}" Content="o" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="pbtn" Grid.Column="10" Style="{StaticResource FullKeyboardStyle1}" Content="p" Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="bslashbtn" Grid.Column="11" Style="{StaticResource FullKeyboardStyle1}" Content="/" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="bslashbtn" Grid.Column="11" Style="{StaticResource FullKeyboardStyle1}" Content="\" Click="cmdButton_Click" ClickMode="Release" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.2*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -270,7 +274,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.2*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="plusbtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="+" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="abtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="a" Click="cmdButton_Click" ClickMode="Release" />
@@ -286,7 +290,7 @@
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -308,7 +312,7 @@
                 <Button x:Name="mbtn" Grid.Column="7" Style="{StaticResource FullKeyboardStyle1}" Content="m" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Commabtn" Grid.Column="8" Style="{StaticResource FullKeyboardStyle1}" Content="," Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Decbtn" Grid.Column="9" Style="{StaticResource FullKeyboardStyle1}" Content="." Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="Puctbtn" Grid.Column="10" Style="{StaticResource FullKeyboardStyle1}" Content="@#" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="Puctbtn" Grid.Column="10" Style="{StaticResource FullKeyboardStyle1}" Content="@/#" Click="cmdButton_Click" ClickMode="Release" />
 
             </Grid>
             <Grid Grid.Row="3">
@@ -322,19 +326,45 @@
                 <Button x:Name="NumericButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="123" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="leftbracketbtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="(" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="blank2btn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="50">
+                    <Viewbox  Stretch="Fill" Margin="5,0">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
                                     <PathGeometry>
-                                        <PathFigure StartPoint="10,30">
-                                            <LineSegment Point="10,40"></LineSegment>
+                                        <PathFigure StartPoint="0,30">
+                                            <LineSegment Point="0,40"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="10,40">
-                                            <LineSegment Point="40,40"></LineSegment>
+                                        <PathFigure StartPoint="0,40">
+                                            <LineSegment Point="35,40"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="40,40">
-                                            <LineSegment Point="40,30"></LineSegment>
+                                        <PathFigure StartPoint="35,40">
+                                            <LineSegment Point="35,30"></LineSegment>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Viewbox>
+                </Button>
+                <Button x:Name="rightbracketbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content=")" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="backbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
+                    <Canvas Width="60" Height="35">
+                        <Path Style="{StaticResource FullKeyboardStyle4}">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="15,5">
+                                            <LineSegment Point="50,5"></LineSegment>
+                                            <LineSegment Point="50,25"></LineSegment>
+                                            <LineSegment Point="15,25"></LineSegment>
+                                            <LineSegment Point="0,15"></LineSegment>
+                                            <LineSegment Point="15,5"></LineSegment>
+                                        </PathFigure>
+                                        <PathFigure StartPoint="20,10">
+                                            <LineSegment Point="45,20"></LineSegment>
+                                        </PathFigure>
+                                        <PathFigure StartPoint="45,10">
+                                            <LineSegment Point="20,20"></LineSegment>
                                         </PathFigure>
                                     </PathGeometry>
                                 </GeometryGroup>
@@ -342,31 +372,6 @@
                         </Path>
                     </Canvas>
                 </Button>
-                <Button x:Name="rightbracketbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content=")" Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="backbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                <Canvas Width="80" Height="35">
-                    <Path Style="{StaticResource FullKeyboardStyle4}">
-                        <Path.Data>
-                            <GeometryGroup>
-                                <PathGeometry>
-                                    <PathFigure StartPoint="20,0" IsClosed="True">
-                                        <LineSegment Point="60,0"></LineSegment>
-                                        <LineSegment Point="60,30"></LineSegment>
-                                        <LineSegment Point="20,30"></LineSegment>
-                                        <LineSegment Point="0,15"></LineSegment>
-                                    </PathFigure>
-                                    <PathFigure StartPoint="20,5">
-                                        <LineSegment Point="55,25"></LineSegment>
-                                    </PathFigure>
-                                    <PathFigure StartPoint="55,5">
-                                        <LineSegment Point="20,25"></LineSegment>
-                                    </PathFigure>
-                                </PathGeometry>
-                            </GeometryGroup>
-                        </Path.Data>
-                    </Path>
-                </Canvas>
-               </Button>
             </Grid>
         </Grid>
         <!-- Grid for the puntuation Keyboard -->
@@ -387,25 +392,26 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="Commabtn2" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="," Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Decbtn2" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="." Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="Qustbtn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="?" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="Dollarbtn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="$" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Exclbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="!" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Backbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="35">
+                    <Canvas Width="60" Height="35">
                         <Path Style="{StaticResource FullKeyboardStyle4}">
                             <Path.Data>
                                 <GeometryGroup>
                                     <PathGeometry>
-                                        <PathFigure StartPoint="20,0">
-                                            <LineSegment Point="60,0"></LineSegment>
-                                            <LineSegment Point="60,30"></LineSegment>
-                                            <LineSegment Point="20,30"></LineSegment>
+                                        <PathFigure StartPoint="15,5">
+                                            <LineSegment Point="50,5"></LineSegment>
+                                            <LineSegment Point="50,25"></LineSegment>
+                                            <LineSegment Point="15,25"></LineSegment>
                                             <LineSegment Point="0,15"></LineSegment>
+                                            <LineSegment Point="15,5"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="20,5">
-                                            <LineSegment Point="55,25"></LineSegment>
+                                        <PathFigure StartPoint="20,10">
+                                            <LineSegment Point="45,20"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="55,5">
-                                            <LineSegment Point="20,25"></LineSegment>
+                                        <PathFigure StartPoint="45,10">
+                                            <LineSegment Point="20,20"></LineSegment>
                                         </PathFigure>
                                     </PathGeometry>
                                 </GeometryGroup>
@@ -439,8 +445,8 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="maobtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content=":" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="downLinebtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="_" Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="slashbtn2" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="\" Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="backslashbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="/" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="slashbtn2" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="/" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="backslashbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="\" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="starbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Content="*" Click="cmdButton_Click" ClickMode="Release" />
 
             </Grid>
@@ -453,45 +459,45 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="percentbtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="%" Click="cmdButton_Click" ClickMode="Release" />
-                <Button x:Name="equebtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="=" Click="cmdButton_Click" ClickMode="Release" />
+                <Button x:Name="atbtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="@" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="blank3btn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="80" Height="50">
+                    <Viewbox  Stretch="Fill" Margin="5,0">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
                                     <PathGeometry>
-                                        <PathFigure StartPoint="10,30">
-                                            <LineSegment Point="10,40"></LineSegment>
+                                        <PathFigure StartPoint="0,30">
+                                            <LineSegment Point="0,40"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="10,40">
-                                            <LineSegment Point="40,40"></LineSegment>
+                                        <PathFigure StartPoint="0,40">
+                                            <LineSegment Point="35,40"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="40,40">
-                                            <LineSegment Point="40,30"></LineSegment>
+                                        <PathFigure StartPoint="35,40">
+                                            <LineSegment Point="35,30"></LineSegment>
                                         </PathFigure>
                                     </PathGeometry>
                                 </GeometryGroup>
                             </Path.Data>
                         </Path>
-                    </Canvas>
+                    </Viewbox>
                 </Button>
                 <Button x:Name="sharpbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="#" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="retbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}"  Click="cmdButton_Click" ClickMode="Release" >
-                    <Canvas Width="80" Height="50">
+                    <Canvas Width="60" Height="50">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
                                     <PathGeometry>
-                                        <PathFigure StartPoint="5,15">
-                                            <LineSegment Point="40,15"></LineSegment>
+                                        <PathFigure StartPoint="5,18">
+                                            <LineSegment Point="35,18"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="40,15">
-                                            <LineSegment Point="40,40"></LineSegment>
+                                        <PathFigure StartPoint="35,18">
+                                            <LineSegment Point="35,37"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="40,40">
-                                            <LineSegment Point="5,40"></LineSegment>
+                                        <PathFigure StartPoint="35,37">
+                                            <LineSegment Point="5,37"></LineSegment>
                                         </PathFigure>
-                                        <PathFigure StartPoint="5,40">
+                                        <PathFigure StartPoint="5,37">
                                             <LineSegment Point="5,30"></LineSegment>
                                         </PathFigure>
                                         <PathFigure StartPoint="5,30">

@@ -475,7 +475,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         e.Handled = true;
                         break;
                     case "Exclbtn":
-                        PressMultiKey(Keys.ShiftKey,Keys.Oem1);
+                        PressMultiKey(Keys.ShiftKey,Keys.D1);
                         // event already handle
                         e.Handled = true;
                         break;
@@ -486,7 +486,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         e.Handled = true;
                         break;
                     case "sharpbtn":
-                        PressMultiKey(Keys.ShiftKey,Keys.Oem3);
+                        PressMultiKey(Keys.ShiftKey,Keys.D3);
                         // event already handle
                         e.Handled = true;
                         break;
@@ -496,14 +496,14 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         // event already handle
                         e.Handled = true;
                         break;
-                    case "Pipebtn":
-                        PressKey(Keys.OemPipe);
+                    case "atbtn":
+                        PressMultiKey(Keys.ShiftKey, Keys.D2);
                         // event already handle
                         e.Handled = true;
                         break;
                     case "slashbtn2":
                     case "slashbtn":
-                        PressKey(Keys.Separator);
+                        PressKey(Keys.OemQuestion);
                         // event already handle
                         e.Handled = true;
                         break;
@@ -523,32 +523,33 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         // event already handle
                         e.Handled = true;
                         break;
-                    case "Qustbtn":
-                        PressKey(Keys.OemQuestion);
+                    case "Dollarbtn":
+                        PressMultiKey(Keys.ShiftKey, Keys.D4);
                         // event already handle
                         e.Handled = true;
                         break;
                     case "downLinebtn":
                     case "Downslashbtn":
-                        PressMultiKey(Keys.ShiftKey, Keys.Subtract);
+                        PressMultiKey(Keys.ShiftKey, Keys.OemMinus);
                         // event already handle
                         e.Handled = true;
                         break;
                     case "plusbtn":
                     case "Addbtn":
-                        PressKey(Keys.Oemplus);
+                    case "PlusButton":
+                        PressKey(Keys.Add);
                         // event already handle
                         e.Handled = true;
                         break;
                     case "openbrackbtn":
                     case "leftbracketbtn":
-                        PressKey(Keys.OemOpenBrackets);
+                        PressMultiKey(Keys.ShiftKey, Keys.D9);
                         // event already handle
                         e.Handled = true;
                         break;
                     case "rightbracketbtn":
                     case "closebrackbtn":
-                        PressKey(Keys.OemCloseBrackets);
+                        PressMultiKey(Keys.ShiftKey, Keys.D0);
                         // event already handle
                         e.Handled = true;
                         break;
@@ -684,12 +685,12 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                         e.Handled = true;
                         break;
                     case "percentbtn":
-                        PressMultiKey(Keys.ShiftKey,Keys.Oem5);
+                        PressMultiKey(Keys.ShiftKey,Keys.D5);
                         e.Handled = true;
                         break;
-                    case "equebtn":
-                        keybd_event((byte)0x61, 0, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
-                        keybd_event((byte)0x61, 0, KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+                    //numeric
+                    case "NumericButton":
+                        this.Type = KeyboardType.Num;
                         // event already handle
                         e.Handled = true;
                         break;
@@ -1242,7 +1243,24 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
 
             return value;
         }
+        //查找父控件
+        public static T GetParentObject<T>(DependencyObject obj, string name) where T : FrameworkElement
+        {
+            DependencyObject parent = VisualTreeHelper.GetParent(obj);
 
+            while (parent != null)
+            {
+                if (parent is T && (((T)parent).Name == name | string.IsNullOrEmpty(name)))
+                {
+                    return (T)parent;
+                }
+
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            return null;
+        }
+ 
         /// <summary>
         /// PropertyChangedCallback method for IsEnabled Attached Property
         /// </summary>
@@ -1271,8 +1289,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                 }
             }
 
-            Window currentWindow = Window.GetWindow(element);
-
+            Window currentWindow = System.Windows.Application.Current.MainWindow;
             // Attach or detach handler for event LocationChanged
             if (currentWindow != null)
             {
@@ -1285,6 +1302,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
                     currentWindow.LocationChanged -= currentWindow_LocationChanged;
                 }
             }
+            
         }
 
         /// <summary>

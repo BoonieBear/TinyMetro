@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:appbar="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.AppBar;assembly=TinyMetroWpfLibrary"
       xmlns:ProgressBar="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.ProgressBar;assembly=TinyMetroWpfLibrary" x:Class="Demo.Views.MainPageView"
+      xmlns:k="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard;assembly=TinyMetroWpfLibrary"
       DataContext="{Binding MainPageViewModel, Source={StaticResource ViewModelLocator}}"
       KeepAlive="True"   
       mc:Ignorable="d" 
@@ -13,7 +14,7 @@
 
     <Grid Style="{StaticResource LightGreenStyle}">
         <StackPanel>
-            <TextBlock Text="水声通信机 " Style="{StaticResource WinTextTitle1Style}"/>
+            <TextBlock Text="title" Style="{StaticResource WinTextTitle1Style}"/>
 
             <Button Content="Go back"
 				FontWeight="ExtraBold"
@@ -29,9 +30,14 @@
 				Style="{StaticResource WinButtonStyle}" HorizontalAlignment="Left"/>
             <ProgressBar Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
                      Style="{StaticResource PerformanceProgressBar}"/>
-            <TextBox HorizontalAlignment="Center" Width="100">
-                
-            </TextBox>
+            <TextBox x:Name ="TestTextBox" HorizontalAlignment="Center" Width="100"
+            k:TabKeyBoard.Placement="Bottom"  
+            k:TabKeyBoard.PlacementTarget="{Binding ElementName=TestTextBox}"
+            k:TabKeyBoard.HorizontalOffset="20"
+            k:TabKeyBoard.Height="160"
+            k:TabKeyBoard.Width="320" 
+            k:TabKeyBoard.IsEnabled="true"
+            k:TabKeyBoard.Type="Num"/>
         </StackPanel>
 
     </Grid>

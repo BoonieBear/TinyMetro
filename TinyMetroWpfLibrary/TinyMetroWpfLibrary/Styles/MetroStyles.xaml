@@ -27,12 +27,12 @@
         <Setter Property="OverridesDefaultStyle" Value="False"/>
         <Setter Property="ShowGridLines" Value="False"/>
     </Style>
-    <Style x:Key="GlassStyle"
+    <Style x:Key="SkyblueStyle"
 	TargetType="Grid">
         <Setter Property="Background">
             <Setter.Value>
                 <ImageBrush 
-		        ImageSource="..\Images\skin_bk_glass.jpg">
+		        ImageSource="..\Images\skyblue_bk.jpg">
                 </ImageBrush>
             </Setter.Value>
         </Setter>
