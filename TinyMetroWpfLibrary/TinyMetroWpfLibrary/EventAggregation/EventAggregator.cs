@@ -59,7 +59,7 @@ namespace BoonieBear.TinyMetro.WPF.EventAggregation
         /// Subscribes an object to the event aggregator.
         /// </summary>
         /// <param name="subscriber">the subscriber</param>
-        public void Subscribe(Object subscriber)
+        public virtual void Subscribe(Object subscriber)
         {
             if (subscriber != null)
             {
@@ -79,7 +79,7 @@ namespace BoonieBear.TinyMetro.WPF.EventAggregation
         /// Unsubscribes an object from the event aggregator (if registered).
         /// </summary>
         /// <param name="subscriber">the subscriber to unregister</param>
-        public void Unsubscribe(Object subscriber)
+        public virtual void Unsubscribe(Object subscriber)
         {
             Monitor.Enter(subscribersLock);
             try

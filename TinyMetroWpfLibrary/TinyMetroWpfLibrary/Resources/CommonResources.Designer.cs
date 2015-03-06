@@ -36,7 +36,7 @@ namespace BoonieBear.TinyMetro.WPF.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TimePunch.Metro.Wpf.Resources.CommonResources", typeof(CommonResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BoonieBear.TinyMetro.WPF.Resources.CommonResources", typeof(CommonResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -44,13 +44,13 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
             MenuItemPanel.LayoutUpdated += AdjustHeightToShowOnlyIcons;
             SizeChanged += AdjustHorizontalSize;
             Loaded += OnLoaded;
+            Unloaded += OnUnloaded;
 
             Background = (Brush) TryFindResource("WinChromeBrush");
 
             if (!ViewModelBase.IsDesignMode)
                 Kernel.Instance.EventAggregator.Subscribe(this);
         }
-
 
         /// <summary>
         /// Unsubscribes the applicationbar from the event aggregator
@@ -68,7 +68,16 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
         /// <param name="e">Routed Events</param>
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            NavigationService ns = null;
+            NavigationService ns;
+            if (GetNavigationService(out ns)) return;
+
+            // Add the handler
+            ns.Navigating += HideOnNavigation;
+            ns.Navigated += ShowWhenNavigated;
+        }
+
+        private bool GetNavigationService(out NavigationService ns)
+        {
             FrameworkElement element = this;
 
             // Walk up, until we get an navigation service
@@ -78,11 +87,23 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
                 element = element.Parent as FrameworkElement;
             } while (ns == null && element != null);
             if (ns == null)
-                return;
+                return true;
+            return false;
+        }
 
-            // Add the handler
-            ns.Navigating += HideOnNavigation;
-            ns.Navigated += ShowWhenNavigated;
+        /// <summary>
+        /// de-Register the navigation service
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnUnloaded(object sender, RoutedEventArgs e)
+        {
+            NavigationService ns;
+            if (GetNavigationService(out ns)) return;
+
+            // Remove the handler
+            ns.Navigating -= HideOnNavigation;
+            ns.Navigated -= ShowWhenNavigated;
         }
 
         #region State Mangement
@@ -192,22 +213,24 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
                 // Set the DataContext of the child element
                 newItem.DataContext = newItem.DataContext ?? DataContext;
 
-                var stack = new StackPanel() {Orientation = Orientation.Vertical, Tag = newItem};
+                var stack = new StackPanel {Orientation = Orientation.Vertical, Tag = newItem};
 
                 // Button 
-                var content = new Image()
+                var content = new Image
                                   {
                                       Stretch = Stretch.UniformToFill,
                                       Width = (Double)TryFindResource("ApplicationBarIconSize"),
                                       Height= (Double)TryFindResource("ApplicationBarIconSize")
                                   };
 
-                var button = new Button()
+                var button = new Button
                                   {
                                       Style = (Style) TryFindResource("ChromeButtonStyle"),
                                       Margin = new Thickness(12,3,12,3),
                                       Content = content,
-                                      Focusable = newItem.Focusable
+                                      Focusable = newItem.Focusable,
+                                      IsDefault = newItem.IsDefault,
+                                      IsCancel = newItem.IsCancel
                                   };
                 stack.Children.Add(button);
 
@@ -230,6 +253,12 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
 
                 binding = new Binding() { Source = newItem, Path = new PropertyPath(ApplicationBarIcon.ImageSourceProperty) };
                 content.SetBinding(Image.SourceProperty, binding);
+
+                binding = new Binding() { Source = newItem, Path = new PropertyPath(ApplicationBarIcon.IsDefaultProperty)};
+                button.SetBinding(Button.IsDefaultProperty, binding);
+
+                binding = new Binding() { Source = newItem, Path = new PropertyPath(ApplicationBarIcon.IsCancelProperty)};
+                button.SetBinding(Button.IsCancelProperty, binding);
 
                 binding = new Binding() { Source = newItem, Path = new PropertyPath(VisibilityProperty) };
                 stack.SetBinding(VisibilityProperty, binding);

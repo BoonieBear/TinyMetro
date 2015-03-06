@@ -32,7 +32,7 @@
 
             <!-- Fixed button to show menu items -->
             <Button Grid.Column="2" HorizontalAlignment="Right"
-                        Style="{StaticResource ChromeButtonStyle}" IsDefault="True"
+                        Style="{StaticResource ChromeButtonStyle}" 
                         Margin="3" 
                         Click="SwitchMenuItemVisibility">
 

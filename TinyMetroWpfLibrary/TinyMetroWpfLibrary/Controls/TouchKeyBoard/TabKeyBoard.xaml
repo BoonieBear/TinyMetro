@@ -16,7 +16,7 @@
             <Setter Property="IsTabStop" Value="False" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="FontSize" Value="38" />
+                    <Setter Property="FontSize" Value="28" />
                 </Trigger>
             </Style.Triggers>
         </Style>

@@ -34,6 +34,16 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
         /// </summary>
         public static DependencyProperty ImageSourceProperty = DependencyProperty.Register("ImageSource", typeof(ImageSource), typeof(ApplicationBarIcon));
 
+        /// <summary>
+        /// IsDefault Dependency Property
+        /// </summary>
+        public static DependencyProperty IsDefaultProperty = DependencyProperty.Register("IsDefault", typeof (bool), typeof (ApplicationBarIcon));
+
+        /// <summary>
+        /// IsCancel Dependency Property
+        /// </summary>
+        public static DependencyProperty IsCancelProperty = DependencyProperty.Register("IsCancel", typeof (bool), typeof (ApplicationBarIcon));
+
         #endregion
 
         /// <summary>
@@ -50,6 +60,34 @@ namespace BoonieBear.TinyMetro.WPF.Controls.AppBar
                 
                 SetValue(ImageSourceProperty, value);
                 OnNotifyPropertyChanged("ImageSource");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a flag that defines if the command is used as the default command
+        /// </summary>
+        [Category("Behavior"), DefaultValue(false), Description("Defines the default command"), NotifyParentProperty(true)]
+        public bool IsDefault
+        {
+            get { return (bool) GetValue(IsDefaultProperty); }
+            set
+            {
+                SetValue(IsDefaultProperty, value);
+                OnNotifyPropertyChanged("IsDefault");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a flag that defines if the command is used as the Cancel command
+        /// </summary>
+        [Category("Behavior"), DefaultValue(false), Description("Defines the Cancel command"), NotifyParentProperty(true)]
+        public bool IsCancel
+        {
+            get { return (bool) GetValue(IsCancelProperty); }
+            set
+            {
+                SetValue(IsCancelProperty, value);
+                OnNotifyPropertyChanged("IsCancel");
             }
         }
 

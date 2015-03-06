@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
@@ -67,8 +68,8 @@ namespace BoonieBear.TinyMetro.WPF.Controls.Picker
         /// <summary>
         /// Value Property
         /// </summary>
-        public static DependencyProperty ValueProperty 
-            = DependencyProperty.Register("Value", typeof(DateTime), typeof(DatePicker));
+        public static DependencyProperty ValueProperty
+            = DependencyProperty.Register("Value", typeof(DateTime), typeof(DatePicker), new PropertyMetadata(OnValueChanged));
 
         /// <summary>
         /// FullMode Header that is shown in the fullmode page
@@ -103,16 +104,22 @@ namespace BoonieBear.TinyMetro.WPF.Controls.Picker
             set { SetValue(FullModeHeaderProperty, value);  }
         }
 
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            Debug.WriteLine("DatePicker Value Changed to {0}", d.GetValue(e.Property));
+
+            var picker = d as DatePicker;
+            if (picker != null && picker.PropertyChanged != null)
+                picker.PropertyChanged.Invoke(picker, new PropertyChangedEventArgs("DatePickerValue"));
+        }
+
         /// <summary>
         /// Gets the Display Value
         /// </summary>
         public DateTime Value
         {
             get { return (DateTime)GetValue(ValueProperty); }
-            set
-            {
-                SetValue(ValueProperty, value);
-            }
+            set { SetValue(ValueProperty, value); }
         }
 
         /// <summary>
@@ -125,9 +132,6 @@ namespace BoonieBear.TinyMetro.WPF.Controls.Picker
             {
                 Value = value.Date.Add(Value.TimeOfDay);
                 IsPickerVisible = false;
-
-                if (PropertyChanged != null)
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("DatePickerValue"));
             }
         }
 

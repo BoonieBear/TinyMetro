@@ -31,6 +31,7 @@
                 Text="{Binding TimePickerValue, Converter={StaticResource ShortTimeConverter}, Mode=TwoWay}" 
                 Style="{StaticResource WinInputTextNormalStyle}" 
                 IsEnabled="{Binding IsEnabled}"
+                IsReadOnly="{Binding IsReadonly}"
                 Foreground="{StaticResource WinTextBoxForegroundBrush}"
                 Background="Transparent"
                 BorderThickness="0"

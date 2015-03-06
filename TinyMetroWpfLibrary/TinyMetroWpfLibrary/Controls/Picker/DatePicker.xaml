@@ -40,6 +40,7 @@
                 Text="{Binding DatePickerValue, Converter={StaticResource ShortDateConverter}, Mode=TwoWay}" 
                 Style="{StaticResource WinInputTextNormalStyle}" 
                 IsEnabled="{Binding IsEnabled}"
+                IsReadOnly="{Binding IsReadonly}"
                 Foreground="{StaticResource WinTextBoxForegroundBrush}"
                 Background="Transparent"
                 BorderThickness="0"

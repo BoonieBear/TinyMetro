@@ -1373,11 +1373,9 @@ namespace BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard
             {
                 if (TabKeyBoard._TabKeyBoardControl != null)
                 {
-                    // Double-click switches KeyboardState between Hidden and Normal
-                    if (e.ClickCount == 2)
-                    {
-                        TabKeyBoard._TabKeyBoardControl.State = (TabKeyBoard._TabKeyBoardControl.State == KeyboardState.Hidden ? KeyboardState.Normal : KeyboardState.Hidden);
-                    }
+                    
+                    TabKeyBoard._TabKeyBoardControl.State = (TabKeyBoard._TabKeyBoardControl.State == KeyboardState.Hidden ? KeyboardState.Normal : KeyboardState.Hidden);
+                    
                 }
             }
         }

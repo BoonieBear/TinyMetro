@@ -4,8 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:appbar="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.AppBar;assembly=TinyMetroWpfLibrary"
-      xmlns:ProgressBar="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.ProgressBar;assembly=TinyMetroWpfLibrary" x:Class="Demo.Views.MainPageView"
+      xmlns:ProgressBar="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.ProgressBar;assembly=TinyMetroWpfLibrary" 
+      x:Class="Demo.Views.MainPageView"
       xmlns:k="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.TouchKeyBoard;assembly=TinyMetroWpfLibrary"
+      xmlns:Picker="clr-namespace:BoonieBear.TinyMetro.WPF.Controls.Picker;assembly=TinyMetroWpfLibrary"   
       DataContext="{Binding MainPageViewModel, Source={StaticResource ViewModelLocator}}"
       KeepAlive="True"   
       mc:Ignorable="d" 
@@ -38,7 +40,20 @@
             k:TabKeyBoard.Width="320" 
             k:TabKeyBoard.IsEnabled="true"
             k:TabKeyBoard.Type="Num"/>
+            <TextBox x:Name ="TestTextBox1" HorizontalAlignment="Center" Width="100"
+            k:TabKeyBoard.Placement="Bottom"  
+            k:TabKeyBoard.PlacementTarget="{Binding ElementName=TestTextBox1}"
+            k:TabKeyBoard.HorizontalOffset="-60"
+            k:TabKeyBoard.Height="160"
+            k:TabKeyBoard.Width="360" 
+            k:TabKeyBoard.IsEnabled="true"
+            k:TabKeyBoard.Type="Num"/>
+            <Picker:TimePicker 
+            FullModeHeader="Select the time"
+            IsTouchSelectionEnabled="True"
+            Value="{Binding SelectedDate, Mode=TwoWay}"/>
         </StackPanel>
-
+        
     </Grid>
+
 </Page>

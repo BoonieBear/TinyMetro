@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using BoonieBear.TinyMetro.WPF.Controller;
@@ -102,19 +103,22 @@ namespace BoonieBear.TinyMetro.WPF.Controls.Picker
             }
         }
 
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            Debug.WriteLine("TimePicker Value Changed to {0}", d.GetValue(e.Property));
+            
+            var picker = d as TimePicker;
+            if (picker != null && picker.PropertyChanged != null)
+                picker.PropertyChanged.Invoke(picker, new PropertyChangedEventArgs("TimePickerValue"));
+        }
+
         /// <summary>
         /// Gets the Display Value
         /// </summary>
         public DateTime Value
         {
             get { return (DateTime)GetValue(ValueProperty); }
-            set
-            {
-                if (Value == value)
-                    return;
-
-                SetValue(ValueProperty, value);
-            }
+            set { SetValue(ValueProperty, value); }
         }
 
         /// <summary>
@@ -123,13 +127,7 @@ namespace BoonieBear.TinyMetro.WPF.Controls.Picker
         public DateTime TimePickerValue
         {
             get { return Value; }
-            set
-            {
-                Value = Value.Date.Add(value.TimeOfDay);
-
-                if (PropertyChanged != null)
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("TimePickerValue"));
-            }
+            set { Value = Value.Date.Add(value.TimeOfDay); }
         }
 
         /// <summary>

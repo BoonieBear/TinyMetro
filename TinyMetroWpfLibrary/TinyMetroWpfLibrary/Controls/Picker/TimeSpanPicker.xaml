@@ -30,6 +30,7 @@
                 Text="{Binding Value, Converter={StaticResource ShortTimeSpanConverter}, Mode=TwoWay}" 
                 Style="{StaticResource WinInputTextNormalStyle}" 
                 IsEnabled="{Binding IsEnabled}"
+                IsReadOnly="{Binding IsReadonly}"
                 Foreground="{StaticResource WinTextBoxForegroundBrush}"
                 Background="Transparent"
                 BorderThickness="0"
