@@ -177,7 +177,7 @@
                 <Button x:Name="btn010103" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="-" Click="cmdButton_Click" ClickMode="Release"/>
                 <Button x:Name="btn010400" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="0" Click="cmdButton_Click" ClickMode="Release"/>
                 <Button x:Name="BlankButton" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Viewbox  Stretch="Fill" Margin="5,0">
+                    <Viewbox  Stretch="Fill" Margin="8,5">
                             <Path Style="{StaticResource FullKeyboardStyle2}">
                                 <Path.Data>
                                     <GeometryGroup>
@@ -200,7 +200,7 @@
                 </Button>
                 <!-- BackSpace Button -->
                 <Button x:Name="btn010402" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="60" Height="35">
+                    <Viewbox Width="60" Height="35">
                         <Path Style="{StaticResource FullKeyboardStyle4}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -222,7 +222,7 @@
                                 </GeometryGroup>
                             </Path.Data>
                         </Path>
-                    </Canvas>
+                    </Viewbox>
                 </Button>
             </Grid>
         </Grid>
@@ -326,7 +326,7 @@
                 <Button x:Name="NumericButton" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="123" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="leftbracketbtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="(" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="blank2btn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Viewbox  Stretch="Fill" Margin="5,0">
+                    <Viewbox  Stretch="Fill" Margin="8,5">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -395,7 +395,7 @@
                 <Button x:Name="Dollarbtn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Content="$" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Exclbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="!" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="Backbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Canvas Width="60" Height="35">
+                    <Viewbox Width="60" Height="35">
                         <Path Style="{StaticResource FullKeyboardStyle4}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -417,7 +417,7 @@
                                 </GeometryGroup>
                             </Path.Data>
                         </Path>
-                    </Canvas>
+                    </Viewbox>
                 </Button>
             </Grid>
             <Grid Grid.Row="1">
@@ -461,7 +461,7 @@
                 <Button x:Name="percentbtn" Grid.Column="0" Style="{StaticResource FullKeyboardStyle1}" Content="%" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="atbtn" Grid.Column="1" Style="{StaticResource FullKeyboardStyle1}" Content="@" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="blank3btn" Grid.Column="2" Style="{StaticResource FullKeyboardStyle1}" Click="cmdButton_Click" ClickMode="Release">
-                    <Viewbox  Stretch="Fill" Margin="5,0">
+                    <Viewbox  Stretch="Fill" Margin="8,5">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -483,7 +483,7 @@
                 </Button>
                 <Button x:Name="sharpbtn" Grid.Column="3" Style="{StaticResource FullKeyboardStyle1}" Content="#" Click="cmdButton_Click" ClickMode="Release" />
                 <Button x:Name="retbtn" Grid.Column="4" Style="{StaticResource FullKeyboardStyle1}"  Click="cmdButton_Click" ClickMode="Release" >
-                    <Canvas Width="60" Height="50">
+                    <Viewbox Width="60" Height="40">
                         <Path Style="{StaticResource FullKeyboardStyle2}">
                             <Path.Data>
                                 <GeometryGroup>
@@ -510,7 +510,7 @@
                                 </GeometryGroup>
                             </Path.Data>
                         </Path>
-                    </Canvas>
+                    </Viewbox>
                 </Button>
             </Grid>
         </Grid>
