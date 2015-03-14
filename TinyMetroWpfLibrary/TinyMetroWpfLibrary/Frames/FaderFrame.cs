@@ -33,7 +33,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 
-namespace BoonieBear.TinyMetro.WPF.Frames
+namespace TinyMetroWpfLibrary.Frames
 {
 
     /// <summary>

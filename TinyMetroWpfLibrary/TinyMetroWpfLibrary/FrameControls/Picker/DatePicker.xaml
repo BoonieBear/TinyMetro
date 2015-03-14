@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="TinyMetroWpfLibrary.FrameControls.Picker.DatePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Converter="clr-namespace:TinyMetroWpfLibrary.Converter" mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Converter:ShortDateConverter x:Key="ShortDateConverter" />
+        <Converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Grid x:Name="DatePickerContent"
+            HorizontalAlignment="Stretch"
+            MouseLeftButtonDown="OnEnterFullModeViaClick"
+            TouchUp="OnEnterFullModeViaTouch"
+            Cursor="{Binding PickerCursor}"
+            Background="{StaticResource WinChromeBrush}">
+
+        <Grid Visibility="{Binding IsTouchSelectionEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+            <TextBlock 
+                Text="{Binding Value, Converter={StaticResource ShortDateConverter}}" 
+                Style="{StaticResource WinTextNormalStyle}" 
+                IsEnabled="{Binding IsEnabled}"
+                Foreground="{StaticResource WinTextBoxForegroundBrush}"
+                Margin="{StaticResource WinMargin}">
+            </TextBlock>
+        
+        </Grid>
+
+        <Grid Visibility="{Binding IsTouchSelectionEnabled, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                Text="{Binding DatePickerValue, Converter={StaticResource ShortDateConverter}, Mode=TwoWay}" 
+                Style="{StaticResource WinInputTextNormalStyle}" 
+                IsEnabled="{Binding IsEnabled}"
+                IsReadOnly="{Binding IsReadonly}"
+                Foreground="{StaticResource WinTextBoxForegroundBrush}"
+                Background="Transparent"
+                BorderThickness="0"
+                Margin="{StaticResource WinMargin}">
+            </TextBox>
+
+            <Button
+                Name="CalendarButton"
+                Style="{StaticResource ChromeButtonStyle}"
+                Grid.Column="1"
+                IsEnabled="{Binding IsEnabled}"
+                IsTabStop="False"
+                Margin="{StaticResource WinMargin}"
+                Click="OpenCalendarPopup">
+                <Button.Content>
+                    <Image Source="/TinyMetroWpfLibrary;component/Images/Calendar.png"></Image>
+                </Button.Content>
+            </Button>
+
+            <Popup Name="CalendarPopup" 
+                   StaysOpen="False"
+                   PlacementTarget="{Binding ElementName=CalendarButton}" 
+                   Placement="MousePoint" PopupAnimation="Fade">
+                <Viewbox Style="{StaticResource BigCalendar}">
+                    <Grid Background="LightGray">
+                        <Calendar SelectedDate="{Binding DatePickerValue, Mode=TwoWay}" Background="White" UseLayoutRounding="False"/>
+                    </Grid>
+                </Viewbox>
+            </Popup>
+        </Grid>
+    </Grid>
+</UserControl>

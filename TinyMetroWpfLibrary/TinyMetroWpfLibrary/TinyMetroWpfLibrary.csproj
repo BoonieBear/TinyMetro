@@ -7,7 +7,7 @@
     <ProjectGuid>{EE62B058-2EBD-462A-AD41-FF6099CD800C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BoonieBear.TinyMetro.WPF</RootNamespace>
+    <RootNamespace>TinyMetroWpfLibrary</RootNamespace>
     <AssemblyName>TinyMetroWpfLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -56,120 +56,116 @@
     <Compile Include="Controller\IKernel.cs" />
     <Compile Include="Controller\INavigationController.cs" />
     <Compile Include="Controller\Kernel.cs" />
-    <Compile Include="Controls\AppBar\ApplicationBar.xaml.cs">
+    <Compile Include="FrameControls\AppBar\ApplicationBar.xaml.cs">
       <DependentUpon>ApplicationBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AppBar\ApplicationBarIcon.cs">
+    <Compile Include="FrameControls\AppBar\ApplicationBarIcon.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\AppBar\ApplicationBarMenuItem.cs">
+    <Compile Include="FrameControls\AppBar\ApplicationBarMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Buttons\DataBoundRadioButton.cs" />
-    <Compile Include="Controls\ErrorBar\DisplayErrorBar.xaml.cs">
+    <Compile Include="FrameControls\Buttons\DataBoundRadioButton.cs" />
+    <Compile Include="FrameControls\ErrorBar\DisplayErrorBar.xaml.cs">
       <DependentUpon>DisplayErrorBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TextBox\MaskedTextBox.cs" />
-    <Compile Include="Controls\Panels\TouchableScrollViewer.cs" />
-    <Compile Include="Controls\Picker\DatePicker.xaml.cs">
+    <Compile Include="FrameControls\TextBox\MaskedTextBox.cs" />
+    <Compile Include="FrameControls\Panels\TouchableScrollViewer.cs" />
+    <Compile Include="FrameControls\Picker\DatePicker.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>DatePicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\DatePickerFullMode.xaml.cs">
+    <Compile Include="FrameControls\Picker\DatePickerFullMode.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>DatePickerFullMode.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\DatePickerFullModeRequest.cs">
+    <Compile Include="FrameControls\Picker\DatePickerFullModeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\DatePickerFullModeViewModel.cs">
+    <Compile Include="FrameControls\Picker\DatePickerFullModeViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\DatePickerSelectDateRequest.cs">
+    <Compile Include="FrameControls\Picker\DatePickerSelectDateRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\DayInfo.cs">
+    <Compile Include="FrameControls\Picker\DayInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\DesignatorInfo.cs">
+    <Compile Include="FrameControls\Picker\DesignatorInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\HourInfo.cs">
+    <Compile Include="FrameControls\Picker\HourInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\IItemFilter.cs">
+    <Compile Include="FrameControls\Picker\IItemFilter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\ListPicker.xaml.cs">
+    <Compile Include="FrameControls\Picker\ListPicker.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>ListPicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\ListPickerFullMode.xaml.cs">
+    <Compile Include="FrameControls\Picker\ListPickerFullMode.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>ListPickerFullMode.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\ListPickerFullModeRequest.cs">
+    <Compile Include="FrameControls\Picker\ListPickerFullModeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\ListPickerFullModeViewModel.cs">
+    <Compile Include="FrameControls\Picker\ListPickerFullModeViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\ListPickerSelectItemRequest.cs">
+    <Compile Include="FrameControls\Picker\ListPickerSelectItemRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\MinuteInfo.cs">
+    <Compile Include="FrameControls\Picker\MinuteInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\MonthInfo.cs">
+    <Compile Include="FrameControls\Picker\MonthInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimePicker.xaml.cs">
+    <Compile Include="FrameControls\Picker\TimePicker.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>TimePicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\TimePickerFullMode.xaml.cs">
+    <Compile Include="FrameControls\Picker\TimePickerFullMode.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>TimePickerFullMode.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\TimePickerFullModeRequest.cs">
+    <Compile Include="FrameControls\Picker\TimePickerFullModeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimePickerFullModeViewModel.cs">
+    <Compile Include="FrameControls\Picker\TimePickerFullModeViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimePickerSelectRequest.cs">
+    <Compile Include="FrameControls\Picker\TimePickerSelectRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimeSpanPicker.xaml.cs">
+    <Compile Include="FrameControls\Picker\TimeSpanPicker.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>TimeSpanPicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\TimeSpanPickerFullMode.xaml.cs">
+    <Compile Include="FrameControls\Picker\TimeSpanPickerFullMode.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>TimeSpanPickerFullMode.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Picker\TimeSpanPickerFullModeRequest.cs">
+    <Compile Include="FrameControls\Picker\TimeSpanPickerFullModeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimeSpanPickerFullModeViewModel.cs">
+    <Compile Include="FrameControls\Picker\TimeSpanPickerFullModeViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\TimeSpanPickerSelectRequest.cs">
+    <Compile Include="FrameControls\Picker\TimeSpanPickerSelectRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Picker\YearInfo.cs">
+    <Compile Include="FrameControls\Picker\YearInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\ProgressBar\RelativeAnimatingContentControl.cs" />
-    <Compile Include="Controls\TextBox\ExtendedTextBox.cs" />
-    <Compile Include="Controls\TouchKeyBoard\TabKeyBoard.xaml.cs">
-      <DependentUpon>TabKeyBoard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\WindowedControl\WindowedItemsControl.cs" />
-    <Compile Include="Controls\WindowedControl\WindowedItemsControl.Manipulation.cs" />
-    <Compile Include="Controls\WindowedControl\WindowedItemsControl.Mouse.cs" />
-    <Compile Include="Controls\WindowedControl\WindowedItemsControl.Overrides.cs" />
-    <Compile Include="Controls\WindowedControl\WrappableStackPanel.cs" />
+    <Compile Include="FrameControls\ProgressBar\RelativeAnimatingContentControl.cs" />
+    <Compile Include="FrameControls\WindowedControl\WindowedItemsControl.cs" />
+    <Compile Include="FrameControls\WindowedControl\WindowedItemsControl.Manipulation.cs" />
+    <Compile Include="FrameControls\WindowedControl\WindowedItemsControl.Mouse.cs" />
+    <Compile Include="FrameControls\WindowedControl\WindowedItemsControl.Overrides.cs" />
+    <Compile Include="FrameControls\WindowedControl\WrappableStackPanel.cs" />
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\EqualsToVisibilityMultiConverter.cs" />
     <Compile Include="Converter\NumberToFixedStringConverter.cs" />
@@ -250,47 +246,43 @@
     <Resource Include="Images\appbar.icons.pdn" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\AppBar\ApplicationBar.xaml">
+    <Page Include="FrameControls\AppBar\ApplicationBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\ErrorBar\DisplayErrorBar.xaml">
+    <Page Include="FrameControls\ErrorBar\DisplayErrorBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\Picker\DatePicker.xaml">
+    <Page Include="FrameControls\Picker\DatePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\DatePickerFullMode.xaml">
+    <Page Include="FrameControls\Picker\DatePickerFullMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\ListPicker.xaml">
+    <Page Include="FrameControls\Picker\ListPicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\ListPickerFullMode.xaml">
+    <Page Include="FrameControls\Picker\ListPickerFullMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\TimePicker.xaml">
+    <Page Include="FrameControls\Picker\TimePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\TimePickerFullMode.xaml">
+    <Page Include="FrameControls\Picker\TimePickerFullMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\TimeSpanPicker.xaml">
+    <Page Include="FrameControls\Picker\TimeSpanPicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Picker\TimeSpanPickerFullMode.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\TouchKeyBoard\TabKeyBoard.xaml">
+    <Page Include="FrameControls\Picker\TimeSpanPickerFullMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,6 +299,7 @@
     <Resource Include="Images\skyblue_bk.jpg" />
     <Resource Include="Images\default_bk.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

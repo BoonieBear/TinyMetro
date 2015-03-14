@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace BoonieBear.TinyMetro.WPF.Hooks
+namespace TinyMetroWpfLibrary.Hooks
 {
     /// <summary>
     /// This component monitors all mouse activities globally (also outside of the application) 

@@ -12,10 +12,10 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using BoonieBear.TinyMetro.WPF.Controller;
-using BoonieBear.TinyMetro.WPF.Events;
+using TinyMetroWpfLibrary.Controller;
+using TinyMetroWpfLibrary.Events;
 
-namespace BoonieBear.TinyMetro.WPF.Metro
+namespace TinyMetroWpfLibrary.Metro
 {
     /// <summary>
     /// The TransparentWindow is based on a sample of William Han that he published on MSDN.

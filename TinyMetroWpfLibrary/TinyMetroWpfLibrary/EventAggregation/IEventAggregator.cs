@@ -4,7 +4,7 @@
 
 using System;
 
-namespace BoonieBear.TinyMetro.WPF.EventAggregation
+namespace TinyMetroWpfLibrary.EventAggregation
 {
     /// <summary>
     /// Interface describing an event aggregator.

@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace BoonieBear.TinyMetro.WPF.Converter
+namespace TinyMetroWpfLibrary.Converter
 {
     /// <summary>
     /// This converter takes a number and converts it to a fixed digit long string

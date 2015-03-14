@@ -1,0 +1,215 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style x:Key="StandardListBox" TargetType="{x:Type ListBox}">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+		<Style.Resources>
+			<Style TargetType="{x:Type ListBoxItem}">
+				<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+				<Setter Property="Background" Value="{DynamicResource DefaultListBoxItemBgBrush}"/>
+				<Setter Property="BorderBrush" Value="Transparent"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ListBoxItem}">
+							<Grid Margin="4,0,4,4">
+								<Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" SnapsToDevicePixels="True"></Border>
+								<ContentPresenter Margin="8,10"/>
+							</Grid>
+							<ControlTemplate.Triggers>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition Property="IsMouseOver" Value="True"/>
+										<Condition Property="IsSelected" Value="False"/>
+									</MultiTrigger.Conditions>
+									<Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+									<Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+								</MultiTrigger>
+								<Trigger Property="IsSelected" Value="True">
+									<Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+									<Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style.Resources>
+	</Style>
+    <Style x:Key="SettingsLeftMenuListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="{DynamicResource DefaultListBoxItemBgBrush}"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Margin="4,0,4,4">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" SnapsToDevicePixels="True"></Border>
+                                <ContentPresenter Margin="0"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="True"/>
+                                        <Condition Property="IsSelected" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </MultiTrigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="FinderAPListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="#FFC33D65"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Margin="4,0,4,4">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" SnapsToDevicePixels="True"></Border>
+                                <ContentPresenter Margin="8,10"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="True"/>
+                                        <Condition Property="IsSelected" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="Background" Value="#FFEB7997"/>
+                                    <Setter Property="BorderBrush" Value="#FFEB7997"/>
+                                </MultiTrigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#FFEB7997"/>
+                                    <Setter Property="BorderBrush" Value="#FFEB7997"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="TestCategoryShelfListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="#FF4D4D4D"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Margin="0,6,0,6">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" SnapsToDevicePixels="True"></Border>
+                                <ContentPresenter Margin="0,0"/>
+                            </Grid>
+                            <!--<ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="True"/>
+                                        <Condition Property="IsSelected" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </MultiTrigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>-->
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="TestCategoryInnerListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Background="{TemplateBinding Panel.Background}" BorderBrush="{TemplateBinding Border.BorderBrush}" BorderThickness="{TemplateBinding Border.BorderThickness}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel x:Name="StackPanel1" IsItemsHost="True" Orientation="Horizontal"/>
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Margin="0,0,0,0">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" SnapsToDevicePixels="True"></Border>
+                                <ContentPresenter Margin="10,10,0,10"/>
+                            </Grid>
+                            <!--<ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="True"/>
+                                        <Condition Property="IsSelected" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </MultiTrigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource SelectedListBoxItemBgBrush}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>-->
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="ModuleHomeListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Background" Value="{DynamicResource DefaultListBoxItemBgBrush}"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Margin="0">
+                                <ContentPresenter Margin="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

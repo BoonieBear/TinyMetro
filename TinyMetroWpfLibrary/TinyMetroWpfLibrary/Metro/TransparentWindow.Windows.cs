@@ -5,7 +5,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace BoonieBear.TinyMetro.WPF.Metro
+namespace TinyMetroWpfLibrary.Metro
 {
     public partial class TransparentWindow
     {

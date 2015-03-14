@@ -6,7 +6,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace BoonieBear.TinyMetro.WPF.Docking
+namespace TinyMetroWpfLibrary.Docking
 {
     /// <summary>
     /// Provides methods for obtaining and modifying information for the system taskbar.

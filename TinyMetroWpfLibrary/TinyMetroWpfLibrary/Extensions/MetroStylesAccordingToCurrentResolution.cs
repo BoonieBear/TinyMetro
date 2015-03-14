@@ -1,10 +1,10 @@
 using System;
 using System.Windows.Forms;
 using System.Windows.Markup;
-using BoonieBear.TinyMetro.WPF.Helper;
-using BoonieBear.TinyMetro.WPF.ViewModel;
+using TinyMetroWpfLibrary.Helper;
+using TinyMetroWpfLibrary.ViewModel;
 
-namespace BoonieBear.TinyMetro.WPF.Extensions
+namespace TinyMetroWpfLibrary.Extensions
 {
     [MarkupExtensionReturnType(typeof(Uri))] 
     public class MetroStylesAccordingToCurrentResolution : MarkupExtension

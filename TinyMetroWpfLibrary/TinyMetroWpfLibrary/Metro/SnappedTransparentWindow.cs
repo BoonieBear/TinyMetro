@@ -11,14 +11,14 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using BoonieBear.TinyMetro.WPF.Docking;
-using BoonieBear.TinyMetro.WPF.Helper;
-using BoonieBear.TinyMetro.WPF.Hooks;
+using TinyMetroWpfLibrary.Docking;
+using TinyMetroWpfLibrary.Helper;
+using TinyMetroWpfLibrary.Hooks;
 using Binding = System.Windows.Data.Binding;
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 
-namespace BoonieBear.TinyMetro.WPF.Metro
+namespace TinyMetroWpfLibrary.Metro
 {
 
     /// <summary>

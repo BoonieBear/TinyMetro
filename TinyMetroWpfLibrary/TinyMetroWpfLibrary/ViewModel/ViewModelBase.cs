@@ -10,11 +10,11 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
-using BoonieBear.TinyMetro.WPF.Commands;
-using BoonieBear.TinyMetro.WPF.Controller;
-using BoonieBear.TinyMetro.WPF.EventAggregation;
+using TinyMetroWpfLibrary.Commands;
+using TinyMetroWpfLibrary.Controller;
+using TinyMetroWpfLibrary.EventAggregation;
 
-namespace BoonieBear.TinyMetro.WPF.ViewModel
+namespace TinyMetroWpfLibrary.ViewModel
 {
     /// <summary>
     /// The ViewModelBase is used as base for all view models

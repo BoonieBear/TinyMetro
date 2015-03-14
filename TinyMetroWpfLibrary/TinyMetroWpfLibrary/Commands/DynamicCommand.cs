@@ -5,7 +5,7 @@
 using System;
 using System.Windows.Input;
 
-namespace BoonieBear.TinyMetro.WPF.Commands
+namespace TinyMetroWpfLibrary.Commands
 {
     /// <summary>
     /// A Dynamic Command is an lightweight alternative to the RelayCommand.

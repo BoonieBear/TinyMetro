@@ -5,7 +5,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace BoonieBear.TinyMetro.WPF.Hooks {
+namespace TinyMetroWpfLibrary.Hooks {
 
     public static partial class HookManager {
         /// <summary>

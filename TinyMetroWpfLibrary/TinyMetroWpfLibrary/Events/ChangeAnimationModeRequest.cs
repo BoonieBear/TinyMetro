@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BoonieBear.TinyMetro.WPF.Frames;
+using TinyMetroWpfLibrary.Frames;
 
-namespace BoonieBear.TinyMetro.WPF.Events
+namespace TinyMetroWpfLibrary.Events
 {
     public class ChangeAnimationModeRequest
     {

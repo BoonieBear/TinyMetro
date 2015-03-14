@@ -12,7 +12,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 
-namespace BoonieBear.TinyMetro.WPF.Frames
+namespace TinyMetroWpfLibrary.Frames
 {
     /// <summary>
     /// The SliderFrame is based on the work of Dr.WPF 2007.

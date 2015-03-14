@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace BoonieBear.TinyMetro.WPF.Helper
+namespace TinyMetroWpfLibrary.Helper
 {
     /// <summary>
     /// This class is used to get the dpi of the screen

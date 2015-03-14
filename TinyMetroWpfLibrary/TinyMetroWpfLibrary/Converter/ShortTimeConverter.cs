@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace BoonieBear.TinyMetro.WPF.Converter
+namespace TinyMetroWpfLibrary.Converter
 {
     /// <summary>
     /// This Converter is used to show a date value as a short time string

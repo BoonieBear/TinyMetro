@@ -2,7 +2,7 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-namespace BoonieBear.TinyMetro.WPF.EventAggregation
+namespace TinyMetroWpfLibrary.EventAggregation
 {
     /// <summary>
     /// Marks the implementer as a message handler of a specific message type. Can 

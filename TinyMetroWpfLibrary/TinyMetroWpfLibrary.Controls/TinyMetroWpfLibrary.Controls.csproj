@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7ABE44B3-55D7-43AA-9742-88D7359ED0E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinyMetroWpfLibrary.Controls</RootNamespace>
+    <AssemblyName>TinyMetroWpfLibrary.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ZoomableCanvas">
+      <HintPath>..\ThirdParty\ZoomableCanvas\ZoomableCanvas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\ConverterToRevertValue.cs" />
+    <Compile Include="Converters\DashArrowLinePointScaleConverter.cs" />
+    <Compile Include="DragDropFramework\DataConsumerBase.cs" />
+    <Compile Include="DragDropFramework\DataProviderBase.cs" />
+    <Compile Include="DragDropFramework\DefaultAdorner.cs" />
+    <Compile Include="DragDropFramework\DragManager.cs" />
+    <Compile Include="DragDropFramework\DropManager.cs" />
+    <Compile Include="DragDropFramework\Utilities.cs" />
+    <Compile Include="FanPanel\FanPanel.cs" />
+    <Compile Include="IndexControl\IndexControl.cs" />
+    <Compile Include="PercentageProgressRing\PercentageProgressRing.cs" />
+    <Compile Include="ProgressIndicator\ProgressIndicator.xaml.cs">
+      <DependentUpon>ProgressIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TouchKeyBoard\TabKeyBoard.xaml.cs">
+      <DependentUpon>TabKeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomableHeatMapControl\FixSizeImage.cs" />
+    <Compile Include="ZoomableHeatMapControl\SamplingPickerDragDrop.cs" />
+    <Compile Include="ZoomableHeatMapControl\HeatMapVisualPoint.cs" />
+    <Compile Include="ZoomableHeatMapControl\MetroZoomableCanvas.cs" />
+    <Compile Include="ZoomableHeatMapControl\MouseTouchDevice.cs" />
+    <Compile Include="ZoomableHeatMapControl\ToolTipPickerDragDrop.cs" />
+    <Compile Include="ZoomableHeatMapControl\ZoomableHeatMapControl.cs" />
+    <Page Include="ProgressIndicator\ProgressIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetroMessageBox\MetroMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetroMessageBox\MetroMessagePageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetroMessageBox\MetroMultiInterfaceMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\AnimationContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\AnimationSlide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\AsyncThumbnail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ControlStyles.xaml</DependentUpon>
+    </Page>
+    <Page Include="Styles\ColorLegend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Colours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\FetchingDataProgrssRing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\IndexControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\LengthMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ListBoxHorizontalRepeatButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ListBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ControlStyles.xaml</DependentUpon>
+    </Page>
+    <Page Include="Styles\MaskedTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MetroComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MetroContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MetroProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MetroRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PercentageProgressRing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PopupMessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ProgressRingStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ControlStyles.xaml</DependentUpon>
+    </Page>
+    <Page Include="Styles\StackPanelStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ControlStyles.xaml</DependentUpon>
+    </Page>
+    <Page Include="Styles\Tile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TileContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ToggleSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="AnimationContentControl\AnimationContentControl.cs" />
+    <Compile Include="AnimationSlide\AnimationSlide.cs" />
+    <Compile Include="AsyncThumbnail\AsyncThumbnail.cs" />
+    <Compile Include="ColorLegend\ColorLegend.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\ColorItemFillConverter.cs" />
+    <Compile Include="Converters\MarkupConverter.cs" />
+    <Compile Include="Converters\ThicknessToDoubleConverter.cs" />
+    <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="Converters\MessageBoxButtonVisibilityConverter.cs" />
+    <Compile Include="FetchingDataProgressRing\FetchingDataProgrssRing.cs" />
+    <Compile Include="GifImage\GifAnimation.cs" />
+    <Compile Include="GifImage\GifImage.cs" />
+    <Compile Include="LengthMark\LengthMark.cs" />
+    <Compile Include="ListBoxHorizontalRepeatButton\ListBoxHorizontalRepeatButton.cs" />
+    <Compile Include="MediaManager\MediaManager.cs" />
+    <Compile Include="MetroComboBox\MetroCombobox.cs" />
+    <Compile Include="MetroContentControl\MetroContentControl.cs" />
+    <Compile Include="MetroMessageBox\MetroMessageBox.xaml.cs">
+      <DependentUpon>MetroMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetroMessageBox\MetroMessagePageBox.xaml.cs">
+      <DependentUpon>MetroMessagePageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetroMessageBox\MetroMultiInterfaceMessageBox.xaml.cs">
+      <DependentUpon>MetroMultiInterfaceMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetroPopup\MetroPopup.cs" />
+    <Compile Include="MetroProgressBar\MetroProgressBar.cs" />
+    <Compile Include="MetroRadioButton\MetroRadioButton.cs" />
+    <Compile Include="PopupMessageControl\PopupMessageControl.cs" />
+    <Compile Include="TileContentControl\TileContentControl.cs" />
+    <Compile Include="Tile\Tile.cs" />
+    <Compile Include="ToogleSwitch\TouchThumb.cs" />
+    <Compile Include="Utils\ActualSizePropertyProxy.cs" />
+    <Compile Include="Utils\DoubleUtil.cs" />
+    <Compile Include="Utils\SafeRaise.cs" />
+    <Compile Include="Utils\TreeHelper.cs" />
+    <Compile Include="MaskedTextBox\MaskedTextBox.cs" />
+    <Compile Include="MaskedTextBox\TextBoxHelper.cs" />
+    <Compile Include="MetroProgressRing\ProgressRing.cs" />
+    <Compile Include="ToogleSwitch\ToggleSwitch.cs" />
+    <Page Include="Styles\ZoomableHeatMapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TouchKeyBoard\TabKeyBoard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Font\seguisym.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TinyMetroWpfLibrary.LogUtil\TinyMetroWpfLibrary.LogUtil.csproj">
+      <Project>{514904ac-d8c6-4235-9349-02edec00649d}</Project>
+      <Name>TinyMetroWpfLibrary.LogUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TinyMetroWpfLibrary.Utility\TinyMetroWpfLibrary.Utility.csproj">
+      <Project>{00e39404-4d20-4213-a194-e242b3a7d305}</Project>
+      <Name>TinyMetroWpfLibrary.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

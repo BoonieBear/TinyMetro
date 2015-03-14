@@ -7,11 +7,11 @@ using System.Drawing;
 using System.Windows;
 using System.Windows.Forms;
 using System.Linq;
-using BoonieBear.TinyMetro.WPF.Helper;
+using TinyMetroWpfLibrary.Helper;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
 
-namespace BoonieBear.TinyMetro.WPF.Docking
+namespace TinyMetroWpfLibrary.Docking
 {
     /// <summary>
     /// Implements a application task bar docking mechanism

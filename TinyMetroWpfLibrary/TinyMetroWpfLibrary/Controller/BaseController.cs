@@ -9,14 +9,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using BoonieBear.TinyMetro.WPF.Controls.Picker;
-using BoonieBear.TinyMetro.WPF.EventAggregation;
-using BoonieBear.TinyMetro.WPF.Events;
-using BoonieBear.TinyMetro.WPF.Frames;
-using BoonieBear.TinyMetro.WPF.Helper;
-using BoonieBear.TinyMetro.WPF.ViewModel;
+using TinyMetroWpfLibrary.EventAggregation;
+using TinyMetroWpfLibrary.Events;
+using TinyMetroWpfLibrary.FrameControls.Picker;
+using TinyMetroWpfLibrary.Frames;
+using TinyMetroWpfLibrary.Helper;
+using TinyMetroWpfLibrary.ViewModel;
 
-namespace BoonieBear.TinyMetro.WPF.Controller
+namespace TinyMetroWpfLibrary.Controller
 {
     /// <summary>
     /// Base class for module specific controllers

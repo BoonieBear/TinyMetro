@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace BoonieBear.TinyMetro.WPF.Commands
+namespace TinyMetroWpfLibrary.Commands
 {
     public class RelayCommand : ICommand
     {

@@ -1,0 +1,448 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="SegoeUISymbol">../Font/seguisym.ttf#Segoe UI Symbol</FontFamily>
+	<Color x:Key="White">#FFFFFFFF</Color>
+	<Color x:Key="Dark">#FF151515</Color>
+	<!--AppBar linear background-->
+	<Color x:Key="AppBar0">#FFEDEDED</Color>
+	<Color x:Key="AppBar_6">#FFBFBFBF</Color>
+	<Color x:Key="AppBar1">#FF8C8C8C</Color>
+	<!--When the mouse is over an item, the item becomes this color.-->
+	<Color x:Key="HoverItem">#FF3399FE</Color>
+
+	<Color x:Key="DefaultButtonColor">#FF3F4045</Color>
+
+	<Color x:Key="DefaultListBoxItemBgColor">#FF3F4045</Color>
+	<Color x:Key="SelectedListBoxItemBgColor">#FF007ACD</Color>
+
+    <Color x:Key="DefaultBackground">#FF0F3A6E</Color>
+    <Color x:Key="FlukeNetworksGold"> #FFDDAB1C</Color>
+    <Color x:Key="FlukeNetworksBlue">#FF293F6A</Color>
+    <Color x:Key="FlukeNetworksSilver">#FF9CA1A7</Color>
+
+    <!--AppBar Background-->
+    <LinearGradientBrush x:Key="AppBarBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="{DynamicResource AppBar1}" Offset="1"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="AppBarBackground1" >
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="{DynamicResource AppBar1}" Offset="1"/>
+    </RadialGradientBrush>    
+    <!--<LinearGradientBrush x:Key="CaptureBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FF4C417C" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush Color="#FF008287" x:Key="CaptureBackground"></SolidColorBrush>
+    <!--<LinearGradientBrush x:Key="EnvironmentBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FF18AE1F" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush Color="#FF9F00A7" x:Key="EnvironmentBackground"></SolidColorBrush>
+    <!--<LinearGradientBrush x:Key="PerformanceBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FFC7891D" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush Color="#FF77933C" x:Key="PerformanceBackground"></SolidColorBrush>
+    <!--<LinearGradientBrush x:Key="WizardBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FFECEC1D" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush x:Key="WizardBackground" Color="#FFF0AA1E"></SolidColorBrush>
+    <!--<LinearGradientBrush x:Key="SurveyBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FF2271B4" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush x:Key="SurveyBackground" Color="#FF2D89EF"></SolidColorBrush>
+    <!--<LinearGradientBrush x:Key="FindBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="#FFEC400E" Offset="1"/>
+    </LinearGradientBrush>-->
+    <SolidColorBrush x:Key="FindBackground" Color="#FFB91D47"></SolidColorBrush>
+    <SolidColorBrush x:Key="SettingsBackground" Color="#FF008287"></SolidColorBrush>
+    <SolidColorBrush x:Key="HelpBackground" Color="#FF2D89EF"/>
+    <SolidColorBrush x:Key="ShareBackground" Color="#FF00A300"/>
+    <SolidColorBrush x:Key="ProjectBackground" Color="Purple"/>
+    <!--Transparent background-->
+	<SolidColorBrush x:Key="Transparent" Color="Transparent"></SolidColorBrush>
+	<SolidColorBrush x:Key="WindowBackground" Color="{DynamicResource Dark}"/>
+	<SolidColorBrush x:Key="TextForeground" Color="{DynamicResource White}"/>
+	<!--When the mouse is over an item, the item becomes this color-->
+	<SolidColorBrush x:Key="HoverItemBrush" Color="{DynamicResource HoverItem}"/>
+	<SolidColorBrush x:Key="DefaultButtonBrush" Color="{DynamicResource DefaultButtonColor}"/>
+
+	<SolidColorBrush x:Key="DefaultListBoxItemBgBrush" Color="{DynamicResource DefaultListBoxItemBgColor}"/>
+	<SolidColorBrush x:Key="SelectedListBoxItemBgBrush" Color="{DynamicResource SelectedListBoxItemBgColor}"/>
+
+    <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="{DynamicResource DefaultBackground}"/>
+    <SolidColorBrush x:Key="FlukeNetworksGoldBrush" Color="{DynamicResource FlukeNetworksGold}"/>
+    <SolidColorBrush x:Key="SurveyBackgroundBrush" Color="#48ACC6"/>
+    <SolidColorBrush x:Key="CalibrateRightPanelBackground" Color="#47525F"/>
+    <SolidColorBrush x:Key="AppBarDefaultBrush" Color="#10253F"/>
+    <SolidColorBrush x:Key="ProjectDefaultBrush" Color="#4F81BD"/>
+
+
+	<!-- *************Metro COLORS START************* -->
+
+	<!-- Theme Base Colors -->
+
+	<!--ACCENT COLORS-->
+	<Color x:Key="HighlightDarkColor">#FF086F9E</Color>
+	<Color x:Key="HighlightLightColor">#FF086F9E</Color>
+	<!--80%-->
+	<Color x:Key="AccentColor">#CC119EDA</Color>
+	<!--60%-->
+	<Color x:Key="AccentColor2">#99119EDA</Color>
+	<!--40%-->
+	<Color x:Key="AccentColor3">#66119EDA</Color>
+	<!--20%-->
+	<Color x:Key="AccentColor4">#33119EDA</Color>
+
+	<!--BASE COLORS-->
+	<Color x:Key="BlackColor">#FF000000</Color>
+	<Color x:Key="WhiteColor">#FFFFFFFF</Color>
+	<Color x:Key="Gray1">#FFCCCCCC</Color>
+	<Color x:Key="Gray2">#FF7F7F7F</Color>
+	<Color x:Key="Gray3">#FF333333</Color>
+	<Color x:Key="Gray4">#FFB9B9B9</Color>
+	<Color x:Key="Gray5">#FFD8D8D9</Color>
+	<Color x:Key="Gray6">#FF9D9D9D</Color>
+	<Color x:Key="Gray7">#FFF7F7F7</Color>
+	<Color x:Key="Gray8">#FFE0E0E0</Color>
+	<Color x:Key="Gray9">#FFA59F93</Color>
+	<Color x:Key="Gray10">#7FFFFFFF</Color>
+	<Color x:Key="Gray11">#7FA9A9A9</Color>
+	<Color x:Key="Gray12">#A5F7F7F7</Color>
+	<Color x:Key="Gray13">#5EC9C9C9</Color>
+	<Color x:Key="TextBoxText">#FF414141</Color>
+	<Color x:Key="NormalForegroundColor">#FF000000</Color>
+	<Color x:Key="HoverForegroundColor">#FFFFFFFF</Color>
+	<!--Note: For the best design BaseColor2 should be a contrast of BaseColor1-->
+	<Color x:Key="BaseColor2">#FFFFFFFF</Color>
+	<Color x:Key="BaseColor5">#FFBABABA</Color>
+	<Color x:Key="BaseColor3">#FF303030</Color>
+
+	<Color x:Key="TransparentWhiteColor">#00FFFFFF</Color>
+	<Color x:Key="SemiTransparentWhiteColor">#55FFFFFF</Color>
+	<Color x:Key="TransparentLightLightColor">#A5FFFFFF</Color>
+
+
+	<!-- CORE CONTROL COLORS-->
+	<Color x:Key="ValidationColor1">#052A2E31</Color>
+	<Color x:Key="ValidationColor2">#152A2E31</Color>
+	<Color x:Key="ValidationColor3">#252A2E31</Color>
+	<Color x:Key="ValidationColor4">#352A2E31</Color>
+	<Color x:Key="ValidationColor5">#FFDC000C</Color>
+	<Color x:Key="ValidationSummaryColor1">#FFDC020D</Color>
+	<Color x:Key="ValidationSummaryColor2">#FFCA000C</Color>
+	<Color x:Key="ValidationSummaryColor3">#FFFF9298</Color>
+	<Color x:Key="ValidationSummaryColor4">#FFFDC8C8</Color>
+	<Color x:Key="ValidationSummaryColor5">#DDD43940</Color>
+	<Color x:Key="ValidationSummaryFillColor1">#59F7D8DB</Color>
+	<Color x:Key="ValidationSummaryFillColor2">#FFF7D8DB</Color>
+	<Color x:Key="ControlsValidationColor">#FFDB000C</Color>
+
+	<Color x:Key="ProgressIndeterminateColor1">#33878787</Color>
+	<Color x:Key="ProgressIndeterminateColor2">#33959595</Color>
+	<Color x:Key="ProgressIndeterminateColor3">#4C000000</Color>
+	<Color x:Key="ProgressIndeterminateColor4">#4C000000</Color>
+    
+    <Color x:Key="UXValidationMessageFontColor">White</Color>
+    <SolidColorBrush x:Key="UXValidationMessageForeground" Color="{StaticResource UXValidationMessageFontColor}"/>
+	<!-- *************BRUSHES START************* -->
+	<!--PROJECT TEMPLATE BRUSHES -->
+
+	<!-- UNIVERSAL CONTROL BRUSHES -->
+	<SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource WhiteColor}"/>
+	<SolidColorBrush x:Key="WhiteBrush" Color="{DynamicResource WhiteColor}" />
+	<SolidColorBrush x:Key="BlackBrush" Color="{DynamicResource BlackColor}" />
+	<SolidColorBrush x:Key="TextBrush" Color="{DynamicResource BlackColor}" />
+	<SolidColorBrush x:Key="LabelTextBrush" Color="{DynamicResource BlackColor}" />
+	<SolidColorBrush x:Key="WhiteColorBrush" Color="{DynamicResource WhiteColor}" />
+	<SolidColorBrush x:Key="BlackColorBrush" Color="{DynamicResource BlackColor}" />
+
+	<SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource HighlightDarkColor}" />
+	<SolidColorBrush x:Key="HighlightLightBrush" Color="{DynamicResource HighlightLightColor}" />
+	<SolidColorBrush x:Key="NavigationBorderBrush" Color="#FF9D9492" />
+	<SolidColorBrush x:Key="NavigationForegroundBrush" Color="{DynamicResource BlackColor}"/>
+	<SolidColorBrush x:Key="PageBorderBrush" Color="#FFB2B2B2" />
+	<SolidColorBrush x:Key="BodyTextColorBrush" Color="#FF313131"/>
+	<SolidColorBrush x:Key="ControlsDisabledBrush" Color="{DynamicResource TransparentLightLightColor}"/>
+	<SolidColorBrush x:Key="DisabledWhiteColorBrush" Color="{DynamicResource WhiteColor}" />
+	<SolidColorBrush x:Key="TransparentWhiteBrush" Color="{DynamicResource TransparentWhiteColor}"/>
+	<SolidColorBrush x:Key="SemiTransparentWhiteBrush" Color="{DynamicResource SemiTransparentWhiteColor}"/>
+
+	<SolidColorBrush x:Key="GrayBrush1" Color="{DynamicResource Gray1}"/>
+	<SolidColorBrush x:Key="GrayBrush2" Color="{DynamicResource Gray2}"/>
+	<SolidColorBrush x:Key="GrayBrush3" Color="{DynamicResource Gray3}"/>
+	<SolidColorBrush x:Key="GrayBrush4" Color="{DynamicResource Gray4}"/>
+	<SolidColorBrush x:Key="GrayBrush5" Color="{DynamicResource Gray5}"/>
+	<SolidColorBrush x:Key="GrayBrush6" Color="{DynamicResource Gray6}"/>
+	<SolidColorBrush x:Key="GrayBrush7" Color="{DynamicResource Gray7}"/>
+	<SolidColorBrush x:Key="GrayBrush8" Color="{DynamicResource Gray8}"/>
+	<SolidColorBrush x:Key="GrayBrush9" Color="{DynamicResource Gray9}"/>
+	<SolidColorBrush x:Key="GrayBrush10" Color="{DynamicResource Gray10}"/>
+	<SolidColorBrush x:Key="GrayBrush11" Color="{DynamicResource Gray11}"/>
+	<SolidColorBrush x:Key="GrayBrush12" Color="{DynamicResource Gray12}"/>
+	<SolidColorBrush x:Key="GrayBrush13" Color="{DynamicResource Gray13}"/>
+
+	<SolidColorBrush x:Key="HoverHyperlinkForegroundBrush" Color="{DynamicResource BlackColor}"/>
+	<SolidColorBrush x:Key="HoverHyperlinkBackgroundBrush" Color="{DynamicResource WhiteColor}"/>
+
+	<SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource Gray1}" />
+	<SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource Gray1}" />
+	<SolidColorBrush x:Key="TextBoxMouseOverBorderBrush" Color="{DynamicResource BlackColor}" />
+	<SolidColorBrush x:Key="TextBoxMouseOverInnerBorderBrush" Color="{DynamicResource BlackColor}" />
+
+	<SolidColorBrush x:Key="CheckBoxBrush" Color="{DynamicResource Gray2}" />
+	<SolidColorBrush x:Key="CheckBoxMouseOverBrush" Color="{DynamicResource Gray3}" />
+	<LinearGradientBrush x:Key="CheckBoxBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource Gray5}" Offset="0"/>
+		<GradientStop Color="{DynamicResource WhiteColor}" Offset="1"/>
+	</LinearGradientBrush>
+
+	<SolidColorBrush x:Key="MenuItemDisabledBrush" Color="{DynamicResource Gray6}" />
+
+	<SolidColorBrush x:Key="ThumbBrush" Color="{DynamicResource Gray4}" />
+
+	<SolidColorBrush x:Key="ItemSelectedBrush" Color="{DynamicResource Gray5}" />
+
+	<SolidColorBrush x:Key="SliderTrackBrush" Color="{DynamicResource Gray6}" />
+
+
+	<SolidColorBrush x:Key="ComboBoxPopupBrush" Color="{DynamicResource Gray9}" />
+	<LinearGradientBrush x:Key="BrandingBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
+		<GradientStop Color="{DynamicResource HighlightDarkColor}" Offset="0"/>
+		<GradientStop Color="#FF5FC316" Offset="1"/>
+	</LinearGradientBrush>
+
+	<DropShadowEffect x:Key="DropShadowBrush" Direction="330" Opacity="0.3" ShadowDepth="0" BlurRadius="6"/>
+
+	<SolidColorBrush x:Key="WindowBackgroundBrush" Color="{DynamicResource WhiteColor}" />
+	<SolidColorBrush x:Key="SeperatorBrush" Color="#FFC4C4C5"/>
+
+
+	<!-- CONTROL VALIDATION BRUSHES -->
+	<SolidColorBrush x:Key="ControlsValidationBrush" Color="{DynamicResource ControlsValidationColor}"/>
+	<SolidColorBrush x:Key="ValidationBrush1" Color="{DynamicResource ValidationColor1}"/>
+	<SolidColorBrush x:Key="ValidationBrush2" Color="{DynamicResource ValidationColor2}"/>
+	<SolidColorBrush x:Key="ValidationBrush3" Color="{DynamicResource ValidationColor3}"/>
+	<SolidColorBrush x:Key="ValidationBrush4" Color="{DynamicResource ValidationColor4}"/>
+	<SolidColorBrush x:Key="ValidationBrush5" Color="{DynamicResource ValidationColor5}"/>
+
+
+	
+	<!-- WPF default colours -->
+	<SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="{DynamicResource WhiteColor}" />
+	<SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="{DynamicResource BlackColor}" />
+
+
+    <!-- Perfomance test config UI colours -->
+    <Color x:Key="CategoryDefault">#FF4D4D4D</Color>
+    <Color x:Key="CategorySelected">#FF404040</Color>
+    <Color x:Key="ConfigDefault">#FF77933C</Color>
+    <Color x:Key="ConfigSelected">#FF9BBB59</Color>
+    <Color x:Key="ConfigAddnew">#FF5B624C</Color>
+    
+    <SolidColorBrush x:Key="CategoryDefaultBrush" Color="{DynamicResource CategoryDefault}"/>
+    <SolidColorBrush x:Key="CategorySelectedBrush" Color="{DynamicResource CategorySelected}"/>
+    <SolidColorBrush x:Key="ConfigDefaultBrush" Color="{DynamicResource ConfigDefault}"/>
+    <SolidColorBrush x:Key="ConfigSelectedBrush" Color="{DynamicResource ConfigSelected}"/>
+    <SolidColorBrush x:Key="ConfigAddnewBrush" Color="{DynamicResource ConfigAddnew}"/>
+    <!-- end of Perfomance test config UI colours -->
+    
+    <!--Performance test result page colours-->
+    <!--<Color x:Key="PerResSuccessful">#FF00C750</Color>-->
+    <Color x:Key="PerResSuccessful">White</Color>
+    <Color x:Key="PerResFailed">Red</Color>
+    <Color x:Key="PerResStopped">White</Color>
+    
+    <SolidColorBrush x:Key="PerResSuccessfulBrush" Color="{DynamicResource PerResSuccessful}"/>
+    <SolidColorBrush x:Key="PerResFailedBrush" Color="{DynamicResource PerResFailed}"/>
+    <SolidColorBrush x:Key="PerResStoppedBrush" Color="{DynamicResource PerResStopped}"/>
+    <!--end of Performance test result page colours-->
+    <!--UX popup colors-->
+    <Color x:Key="UXPopupBigBG">#AAAAAAAA</Color>
+    <Color x:Key="UXPopupSmallBG">#FF0F3A6E</Color>
+
+    <SolidColorBrush x:Key="UXPopupBigBGBrush" Color="{StaticResource UXPopupBigBG}"/>
+    <SolidColorBrush x:Key="UXPopupSmallBGBrush" Color="{StaticResource UXPopupSmallBG}"/>
+    <!--end of UX popup colors-->
+    
+    <!--Device Select Page  colours-->
+    <Color x:Key="FinderDefaultColor">#0F3A6E</Color>
+    <Color x:Key="FinderDisplayColor">#953735</Color>
+    <Color x:Key="FinderButtonColor">#AA4341</Color>
+    
+    <SolidColorBrush x:Key="FinderDefaultBrush" Color="{DynamicResource FinderDefaultColor}"/>
+    <SolidColorBrush x:Key="FinderDisplayBrush" Color="{DynamicResource FinderDisplayColor}"/>
+    <SolidColorBrush x:Key="FinderButtonBrush" Color="{DynamicResource FinderButtonColor}"/>
+    <SolidColorBrush x:Key="DiscoveryDefaultBrush" Color="#604A7B"></SolidColorBrush>
+    <!--end Device Select Page  colours-->
+
+    <!--ToggleSwitch  colours-->
+    <Color x:Key="ToggleSwitchThumbColor">#FFFFFF</Color>
+    <Color x:Key="ToggleSwitchCheckColor">#1F6F73</Color>
+    <Color x:Key="ToggleSwitchOuterBorderColor">#474747</Color>
+    <Color x:Key="ToggleSwitchUnCheckColor">#474747</Color>
+
+    <SolidColorBrush x:Key="ToggleSwitchThumbBrush"  Color="{StaticResource ToggleSwitchThumbColor}"/>
+    <SolidColorBrush x:Key="ToggleSwitchCheckBrush" Color="{StaticResource ToggleSwitchCheckColor}"/>
+    <SolidColorBrush x:Key="ToggleSwitchOuterBorderBrush" Color="{StaticResource ToggleSwitchOuterBorderColor}"/>
+    <SolidColorBrush x:Key="ToggleSwitchUnCheckBrush" Color="{StaticResource ToggleSwitchUnCheckColor}"/>
+    <!--end ToggleSwitch colours-->
+    <!--AppBarButton  colours-->
+    <Color x:Key="AppBarItemBackgroundThemeColor" >#00FFFFFF</Color>
+    <Color x:Key="AppBarItemDisableForegroundThemeColor" >#66FFFFFF</Color>
+    <Color x:Key="AppBarItemForegroundThemeColor">#FFFFFFFF</Color>
+    <Color x:Key="AppBarItemPointerOverBackgroundThemeColor">#21FFFFFF</Color>
+    <Color x:Key="AppBarItemPointerOverForegroundThemeColor">#FFFFFFFF</Color>
+    <Color x:Key="AppBarItemPressedForegroundThemeColor">#FF000000</Color>
+
+    <SolidColorBrush x:Key="AppBarItemBackgroundThemeBrush" Color="{StaticResource AppBarItemBackgroundThemeColor}"/>
+    <SolidColorBrush x:Key="AppBarItemDisabledForegroundThemeBrush" Color="{StaticResource AppBarItemDisableForegroundThemeColor}"/>
+    <SolidColorBrush x:Key="AppBarItemForegroundThemeBrush" Color="{StaticResource AppBarItemForegroundThemeColor}"/>
+    <SolidColorBrush x:Key="AppBarItemPointerOverBackgroundThemeBrush" Color="{StaticResource AppBarItemPointerOverBackgroundThemeColor}"/>
+    <SolidColorBrush x:Key="AppBarItemPointerOverForegroundThemeBrush" Color="{StaticResource AppBarItemPointerOverForegroundThemeColor}"/>
+    <SolidColorBrush x:Key="AppBarItemPressedForegroundThemeBrush" Color="{StaticResource AppBarItemPressedForegroundThemeColor}"></SolidColorBrush>
+    <!--End AppBarButton  colours-->
+    <!--charmap visualbrush-->
+    <VisualBrush x:Key="CreateCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE109;" />
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="ImportCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE1DB;"/>                 
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="DeleteCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE107;"/>                   
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="StartCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE102;"/>                  
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="StopCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE103;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="RefreshCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock   FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE117;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="SearchCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock  FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE11A;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="FileCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE16D;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="SignalCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE1E8;" />
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="EditCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE0D1;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="ConfirmCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE081;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    <VisualBrush x:Key="SaveFileCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE105;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="UndoFileCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE10E;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="CloseCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE10A;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    
+
+    <!--<VisualBrush x:Key="CopyCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE16F;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>-->
+    
+    <!--<VisualBrush x:Key="ForwardCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock Text="&#xE111;" FontFamily="{StaticResource SegoeUISymbol}"/>
+        </VisualBrush.Visual>
+    </VisualBrush>-->
+    
+    <VisualBrush x:Key="FilterCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE16E;" />
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="CalculatorCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE163;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="ResetCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE106;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <!--<VisualBrush x:Key="VideoCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE116;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="AudioCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE189;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>-->
+    
+    <VisualBrush x:Key="BrowserCharMapBrush">
+        <VisualBrush.Visual>
+            <TextBlock FontFamily="{StaticResource SegoeUISymbol}" Text="&#xE12B;"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <!--end charmap visualbrush-->
+
+    <Color x:Key="PopupMessageBackgroundColor">#FF4A452A</Color>
+    <SolidColorBrush x:Key="PopupMessageBackground" Color="{StaticResource PopupMessageBackgroundColor}"/>
+</ResourceDictionary>

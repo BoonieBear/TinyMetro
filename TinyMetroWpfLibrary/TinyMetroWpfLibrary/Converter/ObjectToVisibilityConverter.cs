@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace BoonieBear.TinyMetro.WPF.Converter
+namespace TinyMetroWpfLibrary.Converter
 {
     public class ObjectToVisibilityConverter : IValueConverter
     {

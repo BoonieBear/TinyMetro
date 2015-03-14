@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace BoonieBear.TinyMetro.WPF.Helper
+namespace TinyMetroWpfLibrary.Helper
 {
     /// <summary>
     /// This class offers methods for getting device infos

@@ -15,7 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 
-namespace BoonieBear.TinyMetro.WPF.Frames
+namespace TinyMetroWpfLibrary.Frames
 {
     public class AnimationFrame : Frame
     {

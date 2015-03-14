@@ -4,7 +4,7 @@
 
 using System;
 
-namespace BoonieBear.TinyMetro.WPF.Metro
+namespace TinyMetroWpfLibrary.Metro
 {
     /// <summary>
     /// The Resize Flags defines the direction where the window can be sized

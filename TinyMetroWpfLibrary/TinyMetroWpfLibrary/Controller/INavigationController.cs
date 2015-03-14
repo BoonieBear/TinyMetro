@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace BoonieBear.TinyMetro.WPF.Controller
+namespace TinyMetroWpfLibrary.Controller
 {
     /// <summary>
     /// Interface for the Base Controller

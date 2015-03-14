@@ -4,7 +4,7 @@
 
 using System.Windows;
 
-namespace BoonieBear.TinyMetro.WPF.Events
+namespace TinyMetroWpfLibrary.Events
 {
     public class WindowStateApplicationCommand
     {

@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using BoonieBear.TinyMetro.WPF.EventAggregation;
-using BoonieBear.TinyMetro.WPF.Events;
-using BoonieBear.TinyMetro.WPF.Metro;
+using TinyMetroWpfLibrary.EventAggregation;
+using TinyMetroWpfLibrary.Events;
+using TinyMetroWpfLibrary.Metro;
 
-namespace BoonieBear.TinyMetro.WPF.ViewModel
+namespace TinyMetroWpfLibrary.ViewModel
 {
     public class MainWindowViewModelBase : ViewModelBase, 
         IHandleMessage<WindowStateApplicationCommand>

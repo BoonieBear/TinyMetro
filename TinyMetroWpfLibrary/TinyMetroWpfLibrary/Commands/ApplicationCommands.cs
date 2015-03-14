@@ -5,7 +5,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace BoonieBear.TinyMetro.WPF.Commands
+namespace TinyMetroWpfLibrary.Commands
 {
     /// <summary>
     /// The ApplicationCommands Helper enables the binding of ApplicationCommands to the ViewModel.

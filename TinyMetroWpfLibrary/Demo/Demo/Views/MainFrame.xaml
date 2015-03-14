@@ -1,9 +1,9 @@
 ﻿<Metro:TransparentWindow x:Class="Demo.Views.MainFrame"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-        xmlns:Metro="clr-namespace:BoonieBear.TinyMetro.WPF.Metro;assembly=TinyMetroWpfLibrary" 
-        xmlns:Commands="clr-namespace:BoonieBear.TinyMetro.WPF.Commands;assembly=TinyMetroWpfLibrary" 
-        xmlns:Frames="clr-namespace:BoonieBear.TinyMetro.WPF.Frames;assembly=TinyMetroWpfLibrary" 
+        xmlns:Metro="clr-namespace:TinyMetroWpfLibrary.Metro;assembly=TinyMetroWpfLibrary" 
+        xmlns:Commands="clr-namespace:TinyMetroWpfLibrary.Commands;assembly=TinyMetroWpfLibrary" 
+        xmlns:Frames="clr-namespace:TinyMetroWpfLibrary.Frames;assembly=TinyMetroWpfLibrary" 
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainFrameViewModel}"
         Commands:ApplicationCommands.RegisterCommandBindings="{Binding RegisteredCommands}"
         Title="MainFrame" Height="480" Width="640" >

@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls.PercentageProgressRing"
+                    xmlns:metroProgressRing="clr-namespace:TinyMetroWpfLibrary.Controls.MetroProgressRing">
+
+    <Style TargetType="{x:Type Controls:PercentageProgressRing}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:PercentageProgressRing}">
+                    <Canvas Name="RootCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <StackPanel Name="ContentStackPanel">
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=IsOpen}" Value="False">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                            <Grid Name="ContentGrid">
+                                <Ellipse Fill="Black" Opacity="0.75" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Ellipse.Style>
+                                        <Style TargetType="Ellipse">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=IsSupportPercentage}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <metroProgressRing:ProgressRing Name="Part_ProgressRing" 
+                                                   IsActive="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=IsOpen}" 
+                                                   HorizontalAlignment="Center"
+                                                   Width="50"
+                                                   Height="50"/>
+                                
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=IsSupportPercentage}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock>
+                                    <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=Percentange}"/>
+                                    <Run Text="%"/>
+                                    </TextBlock>
+                                </Border>
+                            </Grid>
+                            <Grid Margin="0,5,0,0">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=Text}" Value="{x:Null}">
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Rectangle Fill="Black" Opacity="0.75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=Controls:PercentageProgressRing}, Path=Text}" FontSize="22" Margin="5"/>
+                            </Grid>
+                           
+                        </StackPanel>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

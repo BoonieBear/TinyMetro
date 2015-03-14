@@ -1,6 +1,6 @@
-﻿using BoonieBear.TinyMetro.WPF.EventAggregation;
+﻿using TinyMetroWpfLibrary.EventAggregation;
 
-namespace BoonieBear.TinyMetro.WPF.Controller
+namespace TinyMetroWpfLibrary.Controller
 {
     public interface IKernel
     {

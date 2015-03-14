@@ -4,7 +4,7 @@
 
 using System.Drawing;
 
-namespace BoonieBear.TinyMetro.WPF.Docking
+namespace TinyMetroWpfLibrary.Docking
 {
     public class OnTaskBarMovedEventHandlerArgs
     {

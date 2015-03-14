@@ -2,9 +2,9 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using BoonieBear.TinyMetro.WPF.EventAggregation;
+using TinyMetroWpfLibrary.EventAggregation;
 
-namespace BoonieBear.TinyMetro.WPF.Controller
+namespace TinyMetroWpfLibrary.Controller
 {
     public abstract class Kernel : IKernel
     {

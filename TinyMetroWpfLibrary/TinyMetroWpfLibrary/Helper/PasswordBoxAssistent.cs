@@ -5,7 +5,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace BoonieBear.TinyMetro.WPF.Helper
+namespace TinyMetroWpfLibrary.Helper
 {
     /// <summary>
     /// The PasswordBoxAssistant helps binding the PasswordBox to MVVM ViewModel.

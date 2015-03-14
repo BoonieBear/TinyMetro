@@ -4,7 +4,7 @@
 
 using System.Windows.Navigation;
 
-namespace BoonieBear.TinyMetro.WPF.Events
+namespace TinyMetroWpfLibrary.Events
 {
     /// <summary>
     /// 

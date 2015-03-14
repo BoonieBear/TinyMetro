@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:animationSlide="clr-namespace:TinyMetroWpfLibrary.Controls.AnimationSlide">
+    <Style TargetType="animationSlide:AnimationSlide">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="animationSlide:AnimationSlide">
+                    <Border>
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

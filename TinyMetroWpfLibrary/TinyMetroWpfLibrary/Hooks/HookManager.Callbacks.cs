@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace BoonieBear.TinyMetro.WPF.Hooks
+namespace TinyMetroWpfLibrary.Hooks
 {
     public static partial class HookManager
     {

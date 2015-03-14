@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Demo.Core;
-using BoonieBear.TinyMetro.WPF.Controller;
+using TinyMetroWpfLibrary.Controller;
 
 namespace Demo
 {

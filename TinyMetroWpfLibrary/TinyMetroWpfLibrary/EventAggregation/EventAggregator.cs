@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace BoonieBear.TinyMetro.WPF.EventAggregation
+namespace TinyMetroWpfLibrary.EventAggregation
 {
     /// <summary>
     /// Publishes messages to all objects subscribed for the message type.

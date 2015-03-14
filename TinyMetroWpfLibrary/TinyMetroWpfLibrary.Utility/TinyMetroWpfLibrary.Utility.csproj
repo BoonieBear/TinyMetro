@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00E39404-4D20-4213-A194-E242B3A7D305}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinyMetroWpfLibrary.Utility</RootNamespace>
+    <AssemblyName>TinyMetroWpfLibrary.Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorMapBase.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DebugConfig.cs" />
+    <Compile Include="DupesNameUtility.cs" />
+    <Compile Include="ImageBuilder\ArrowLineBuilder.cs" />
+    <Compile Include="IOHelper.cs" />
+    <Compile Include="IWebBrowsingSource.cs" />
+    <Compile Include="JsonSerializeHelper.cs" />
+    <Compile Include="MergeListUtility.cs" />
+    <Compile Include="NetworkInterfaceQuery.cs" />
+    <Compile Include="Schedular\CommonSchedular.cs" />
+    <Compile Include="CRCHelper.cs" />
+    <Compile Include="ImageBuilder\Define.cs" />
+    <Compile Include="Schedular\DispatcherTimerProxy.cs" />
+    <Compile Include="ImageBuilder\EllipseBuilder.cs" />
+    <Compile Include="Schedular\Executor.cs" />
+    <Compile Include="ImageBuilder\GirdLineEllipse.cs" />
+    <Compile Include="HashCopy.cs" />
+    <Compile Include="Image\ImageUtils.cs" />
+    <Compile Include="Schedular\ITimer.cs" />
+    <Compile Include="Delegates\MessageBoxEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImageBuilder\RectangleBuilder.cs" />
+    <Compile Include="ImageBuilder\ShapBuilderFactory.cs" />
+    <Compile Include="ImageBuilder\ShapBuildFacade.cs" />
+    <Compile Include="ImageBuilder\ShapeBulder.cs" />
+    <Compile Include="SignalColorMap.cs" />
+    <Compile Include="StringHexConverter.cs" />
+    <Compile Include="Schedular\Task.cs" />
+    <Compile Include="Schedular\TaskExecution.cs" />
+    <Compile Include="ThreadTaskQueue\ThreadCommand.cs" />
+    <Compile Include="ThreadTaskQueue\ThreadDefinition.cs" />
+    <Compile Include="ThreadTaskQueue\ThreadedTaskQueue.cs" />
+    <Compile Include="Schedular\TimerEventHandler.cs" />
+    <Compile Include="Schedular\TimerProxy.cs" />
+    <Compile Include="Schedular\UISchedular.cs" />
+    <Compile Include="ThroughputColorMap.cs" />
+    <Compile Include="UnitConverter.cs" />
+    <Compile Include="WebBrowsingSourceManager.cs" />
+    <Compile Include="Win32Helper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TinyMetroWpfLibrary.LogUtil\TinyMetroWpfLibrary.LogUtil.csproj">
+      <Project>{514904ac-d8c6-4235-9349-02edec00649d}</Project>
+      <Name>TinyMetroWpfLibrary.LogUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

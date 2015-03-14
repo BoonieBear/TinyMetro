@@ -1,0 +1,230 @@
+﻿<Page x:Class="TinyMetroWpfLibrary.FrameControls.Picker.DatePickerFullMode"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Converter="clr-namespace:TinyMetroWpfLibrary.Converter"
+      xmlns:Resources="clr-namespace:TinyMetroWpfLibrary.Resources"
+      xmlns:windowedControl="clr-namespace:TinyMetroWpfLibrary.FrameControls.WindowedControl"
+      xmlns:appBar="clr-namespace:TinyMetroWpfLibrary.FrameControls.AppBar"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="DatePickerFullMode">
+
+	<Page.Resources>
+        <Converter:EqualsToVisibilityMultiConverter x:Key="multiConverter" />
+	</Page.Resources>
+	<Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+            Text="{Binding FullModeHeader}" 
+            Style="{StaticResource WinTextGroupHeaderStyle}" 
+            Margin="{StaticResource WinMargin}"/>
+
+        <!-- Content -->
+        <Grid ClipToBounds="True"  Grid.Row="1" x:Name="pickerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <windowedControl:WindowedItemsControl x:Name="monthControl"
+                                    ItemsSource="{Binding AllMonths}"
+                                    SelectedItem="{Binding SelectedMonth, Mode=TwoWay}"
+                                    IsActiveChanged="OnWindowedItemsControlIsActiveChanged">
+
+                <windowedControl:WindowedItemsControl.ItemTemplate>
+                    <DataTemplate DataType="local:MonthInfo">
+                        <Border Width="{StaticResource PickerBox}" Height="{StaticResource PickerBox}"
+                            BorderThickness="1"
+                            BorderBrush="{Binding ElementName=monthControl,
+                                                  Path=Foreground}"
+                            Margin="6">
+                            <Grid>
+                                <Rectangle Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}">
+                                            <Binding />
+                                            <Binding ElementName="monthControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+
+                                <TextBlock Text="{Binding MonthNumber, StringFormat=D2}"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource WinTextExtraLargeStyle}" />
+
+                                <TextBlock Text="{Binding MonthName}" 
+                                       VerticalAlignment="Bottom"
+                                       Margin="{StaticResource WinMargin}"
+                                       Style="{StaticResource WinTextSmallStyle}" />
+
+                                <Rectangle Fill="#80FFFFFF">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}"
+                                                  ConverterParameter="True">
+                                            <Binding />
+                                            <Binding ElementName="monthControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+                            </Grid>
+
+                            <Border.Visibility>
+                                <MultiBinding Converter="{StaticResource multiConverter}">
+                                    <Binding />
+                                    <Binding ElementName="monthControl" Path="SelectedItem" />
+                                    <Binding ElementName="monthControl" Path="IsActive" />
+                                </MultiBinding>
+                            </Border.Visibility>
+                        </Border>
+                    </DataTemplate>
+                </windowedControl:WindowedItemsControl.ItemTemplate>
+
+                <windowedControl:WindowedItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <windowedControl:WrappableStackPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </windowedControl:WindowedItemsControl.ItemsPanel>
+            </windowedControl:WindowedItemsControl>
+
+            <windowedControl:WindowedItemsControl x:Name="dayControl"
+                                    ItemsSource="{Binding AllDays}"
+                                    SelectedItem="{Binding SelectedDay, Mode=TwoWay}"
+                                    IsActiveChanged="OnWindowedItemsControlIsActiveChanged">
+
+                <windowedControl:WindowedItemsControl.ItemTemplate>
+                    <DataTemplate DataType="local:MonthInfo">
+                        <Border Width="{StaticResource PickerBox}" Height="{StaticResource PickerBox}"
+                            BorderThickness="1"
+                            BorderBrush="{Binding ElementName=dayControl,
+                                                  Path=Foreground}"
+                            Margin="6">
+                            <Grid>
+                                <Rectangle Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}">
+                                            <Binding />
+                                            <Binding ElementName="dayControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+
+                                <TextBlock Text="{Binding DayNumber, StringFormat=D2}"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource WinTextExtraLargeStyle}" />
+
+                                <TextBlock Text="{Binding DayOfWeek}" 
+                                       VerticalAlignment="Bottom"
+                                       Margin="{StaticResource WinMargin}"
+                                       Style="{StaticResource WinTextSmallStyle}" />
+
+                                <Rectangle Fill="#80FFFFFF">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}"
+                                                  ConverterParameter="True">
+                                            <Binding />
+                                            <Binding ElementName="dayControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+                            </Grid>
+
+                            <Border.Visibility>
+                                <MultiBinding Converter="{StaticResource multiConverter}">
+                                    <Binding />
+                                    <Binding ElementName="dayControl" Path="SelectedItem" />
+                                    <Binding ElementName="dayControl" Path="IsActive" />
+                                </MultiBinding>
+                            </Border.Visibility>
+
+                        </Border>
+                    </DataTemplate>
+                </windowedControl:WindowedItemsControl.ItemTemplate>
+
+                <windowedControl:WindowedItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <windowedControl:WrappableStackPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </windowedControl:WindowedItemsControl.ItemsPanel>
+            </windowedControl:WindowedItemsControl>
+
+            <windowedControl:WindowedItemsControl x:Name="yearControl"
+                                    ItemsSource="{Binding AllYears}"
+                                    SelectedItem="{Binding SelectedYear, Mode=TwoWay}"
+                                    IsActiveChanged="OnWindowedItemsControlIsActiveChanged">
+
+                <windowedControl:WindowedItemsControl.ItemTemplate>
+                    <DataTemplate DataType="system:Int32">
+                        <Border Width="{StaticResource PickerBox}" Height="{StaticResource PickerBox}"
+                            BorderThickness="1"
+                            BorderBrush="{Binding ElementName=yearControl,
+                                                  Path=Foreground}"
+                            Margin="6">
+                            <Grid>
+                                <Rectangle Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}">
+                                            <Binding />
+                                            <Binding ElementName="yearControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+
+                                <TextBlock Text="{Binding}"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource WinTextExtraLargeStyle}" />
+
+                                <Rectangle Fill="#80FFFFFF">
+                                    <Rectangle.Visibility>
+                                        <MultiBinding Converter="{StaticResource multiConverter}"
+                                                  ConverterParameter="True">
+                                            <Binding />
+                                            <Binding ElementName="yearControl" Path="SelectedItem" />
+                                        </MultiBinding>
+                                    </Rectangle.Visibility>
+                                </Rectangle>
+                            </Grid>
+
+                            <Border.Visibility>
+                                <MultiBinding Converter="{StaticResource multiConverter}">
+                                    <Binding />
+                                    <Binding ElementName="yearControl" Path="SelectedItem" />
+                                    <Binding ElementName="yearControl" Path="IsActive" />
+                                </MultiBinding>
+                            </Border.Visibility>
+
+                        </Border>
+                    </DataTemplate>
+            </windowedControl:WindowedItemsControl.ItemTemplate>
+
+                <windowedControl:WindowedItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                 </windowedControl:WindowedItemsControl.ItemsPanel>
+            </windowedControl:WindowedItemsControl>
+        </Grid>
+        
+        <!-- Application Bar -->
+        <appBar:ApplicationBar Grid.Row="2" Background="{StaticResource WinChromeBrush}">
+            <appBar:ApplicationBar.Icons>
+                <appBar:ApplicationBarIcon ImageSource="/TinyMetroWpfLibrary;component/Images/appbar.check.png"
+                                           Description="{x:Static Resources:CommonResources.Button_Ok}"
+                                           Command="{Binding CheckCommand}"/>
+                <appBar:ApplicationBarIcon ImageSource="/TinyMetroWpfLibrary;component/Images/appbar.cancel.png"
+                                           Description="{x:Static Resources:CommonResources.Button_Cancel}"
+                                           Command="{Binding CancelCommand}"/>
+            </appBar:ApplicationBar.Icons>
+        </appBar:ApplicationBar>
+    </Grid>
+</Page>
