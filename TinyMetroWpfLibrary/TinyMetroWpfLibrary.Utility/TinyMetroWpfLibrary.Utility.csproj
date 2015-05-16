@@ -51,6 +51,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DebugConfig.cs" />
     <Compile Include="DupesNameUtility.cs" />
+    <Compile Include="GlobalSetting.cs" />
     <Compile Include="ImageBuilder\ArrowLineBuilder.cs" />
     <Compile Include="IOHelper.cs" />
     <Compile Include="IWebBrowsingSource.cs" />
