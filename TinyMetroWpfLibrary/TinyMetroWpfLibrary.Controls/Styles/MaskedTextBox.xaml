@@ -1,11 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:System="clr-namespace:System;assembly=mscorlib"
-                    xmlns:converters="clr-namespace:TinyMetroWpfLibrary.Controls.Converters"
-                    xmlns:maskedTextBox="clr-namespace:TinyMetroWpfLibrary.Controls.MaskedTextBox">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-    <converters:ThicknessToDoubleConverter x:Key="ThicknessToDoubleConverter"/>
+    <Controls:ThicknessToDoubleConverter x:Key="ThicknessToDoubleConverter"/>
     
     <Style TargetType="Button" x:Key="CloseButtonStyle">
         <Setter Property="Template">
@@ -83,8 +82,8 @@
             </Border>
         </Grid>
     </ControlTemplate>
-    <Style TargetType="maskedTextBox:MaskedTextBox"  >
-        <Setter Property="maskedTextBox:TextboxHelper.IsMonitoring" Value="True"/>
+    <Style TargetType="Controls:MaskedTextBox"  >
+        <Setter Property="Controls:TextboxHelper.IsMonitoring" Value="True"/>
         <Setter Property="CaretBrush" Value="Black"/>
         <Setter Property="SelectionBrush" Value="{DynamicResource HighlightBrush}" />
         <Setter Property="FontFamily" Value="{DynamicResource ContentFontFamily}" />
@@ -161,10 +160,10 @@
                             <Border x:Name="ReadOnlyVisualElement" Background="{x:Null}" Grid.Column="0" Grid.ColumnSpan="3" Opacity="0" />
                            
                             <ScrollViewer x:Name="PART_ContentHost" VerticalScrollBarVisibility="Disabled" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="1"  IsTabStop="False" Margin="2" VerticalAlignment="Stretch" Background="{x:Null}" />
-                            <TextBlock x:Name="Message" Text="{TemplateBinding maskedTextBox:TextboxHelper.Watermark}"  Grid.Column="0" Visibility="Collapsed"
+                            <TextBlock x:Name="Message" Text="{TemplateBinding Controls:TextboxHelper.Watermark}"  Grid.Column="0" Visibility="Collapsed"
                                        Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" Opacity="0.6" HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                        Margin="6,0,0,0"/>
-                            <Button x:Name="PART_ClearText" Width="30" Grid.Column="1" Style="{DynamicResource CloseButtonStyle}" TextBlock.FontSize="16" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontFamily="Marlett" Content="r" Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(maskedTextBox:TextboxHelper.ClearTextButton), Converter={StaticResource BooleanToVisibilityConverter}}" IsTabStop="False" />
+                            <Button x:Name="PART_ClearText" Width="30" Grid.Column="1" Style="{DynamicResource CloseButtonStyle}" TextBlock.FontSize="16" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontFamily="Marlett" Content="r" Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:TextboxHelper.ClearTextButton), Converter={StaticResource BooleanToVisibilityConverter}}" IsTabStop="False" />
                             <Button x:Name="PART_SearchButton" Width="30" Visibility="{Binding  RelativeSource={RelativeSource  Mode=TemplatedParent}, Path=SearchButtonVisibility}" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextBlock.FontSize="16" Style="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=SearchButtonStyle}" />
                         </Grid>
                         <Rectangle x:Name="DisabledVisualElement"
@@ -204,14 +203,14 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="maskedTextBox:TextboxHelper.HasText" Value="False">
+                        <Trigger Property="Controls:TextboxHelper.HasText" Value="False">
                             <Setter TargetName="PART_ClearText" Property="Opacity" Value="0"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
                             <Setter TargetName="Message" Property="Visibility" Value="Visible" />
                         </DataTrigger>
 
-                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(maskedTextBox:TextboxHelper.ClearTextButton)}" Value="True">
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:TextboxHelper.ClearTextButton)}" Value="True">
                             <Setter TargetName="PART_ContentHost" Property="Margin" Value="2,2,20,2" />
                         </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -236,7 +235,7 @@
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="maskedTextBox:TextboxHelper.HasText" Value="False"/>
+                                <Condition Property="Controls:TextboxHelper.HasText" Value="False"/>
                                 <Condition Property="IsFocused" Value="True"/>
                             </MultiTrigger.Conditions>
                             <MultiTrigger.EnterActions>
@@ -248,7 +247,7 @@
                             </MultiTrigger.ExitActions>
                         </MultiTrigger>
 
-                        <Trigger Property="maskedTextBox:TextboxHelper.HasText" Value="True">
+                        <Trigger Property="Controls:TextboxHelper.HasText" Value="True">
                             <Trigger.EnterActions>
                                 <BeginStoryboard Storyboard="{StaticResource enterHasText}"/>
                             </Trigger.EnterActions>

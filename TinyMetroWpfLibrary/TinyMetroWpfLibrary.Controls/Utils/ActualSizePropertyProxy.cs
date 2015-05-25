@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 
-namespace TinyMetroWpfLibrary.Controls.Utils
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ActualSizePropertyProxy : FrameworkElement, INotifyPropertyChanged
     {

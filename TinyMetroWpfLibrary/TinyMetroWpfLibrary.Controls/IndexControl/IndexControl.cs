@@ -1,8 +1,12 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Input;
 
-namespace TinyMetroWpfLibrary.Controls.IndexControl
+namespace TinyMetroWpfLibrary.Controls
 {
     public class IndexControl : Control
     {

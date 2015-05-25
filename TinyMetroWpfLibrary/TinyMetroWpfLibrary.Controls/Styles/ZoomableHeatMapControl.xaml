@@ -1,10 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:TinyMetroWpfLibrary.Controls.Converters"
-                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls.ZoomableHeatMapControl"
-                    xmlns:toogleSwitch="clr-namespace:TinyMetroWpfLibrary.Controls.ToogleSwitch">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
 
-    <converters:DashArrowLinePointScaleConverter x:Key="DashArrowLinePointScaleConverter"/>
+    <Controls:DashArrowLinePointScaleConverter x:Key="DashArrowLinePointScaleConverter"/>
     <Style TargetType="{x:Type Controls:ZoomableHeatMapControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -74,7 +72,7 @@
                                             Scale="{Binding ElementName=PATH_ZoomableCanvas, Path=Scale}" 
                                             Offset="{Binding ElementName=PATH_ZoomableCanvas, Path=Offset}">
 
-                            <toogleSwitch:TouchThumb Name="HoverThumb"
+                            <Controls:TouchThumb Name="HoverThumb"
                                    Background="Green" 
                                    Canvas.Left="0"
                                    Canvas.Top="0"
@@ -85,7 +83,7 @@
                                                     ScaleX="{Binding ElementName=PATH_ZoomableCanvas, Path=Scale}"
                                                     ScaleY="{Binding ElementName=PATH_ZoomableCanvas, Path=Scale}"/>
                                 </Controls:TouchThumb.RenderTransform>-->
-                            </toogleSwitch:TouchThumb>
+                            </Controls:TouchThumb>
                         </ZoomableCanvas>
                     </Grid>
 

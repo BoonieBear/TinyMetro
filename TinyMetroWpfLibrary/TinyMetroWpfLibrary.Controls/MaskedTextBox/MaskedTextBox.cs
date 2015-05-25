@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
+using TinyMetroWpfLibrary.Utility;
+using System.Runtime.InteropServices;
+using System.Windows.Input;
+using System.Text.RegularExpressions;
 using TinyMetroWpfLibrary.LogUtil;
-namespace TinyMetroWpfLibrary.Controls.MaskedTextBox
+
+namespace TinyMetroWpfLibrary.Controls
 {
     public class MaskedTextBox : TextBox
     {

@@ -1,7 +1,11 @@
-﻿using System.Windows;
-using TinyMetroWpfLibrary.Controls.DragDropFramework;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
 
-namespace TinyMetroWpfLibrary.Controls.ZoomableHeatMapControl
+namespace TinyMetroWpfLibrary.Controls
 {
 
     public class ToolTipPickerDrag<TContainer, TObject> : DataProviderBase<TContainer, TObject>, IDataProvider

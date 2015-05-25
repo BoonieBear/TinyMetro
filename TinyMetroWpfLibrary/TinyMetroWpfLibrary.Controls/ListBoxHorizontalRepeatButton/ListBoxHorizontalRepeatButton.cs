@@ -1,10 +1,13 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Controls.Primitives;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using TinyMetroWpfLibrary.Controls.Utils;
-
-namespace TinyMetroWpfLibrary.Controls.ListBoxHorizontalRepeatButton
+using System.ComponentModel;
+using System.Windows.Data;
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ListBoxHorizontalRepeatButton : RepeatButton, INotifyPropertyChanged
     {

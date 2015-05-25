@@ -14,8 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TinyMetroWpfLibrary.Controls.Utils;
-namespace TinyMetroWpfLibrary.Controls.ColorLegend
+
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ColorLegend : Slider
     {

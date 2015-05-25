@@ -1,13 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:tileContentControl="clr-namespace:TinyMetroWpfLibrary.Controls.TileContentControl"
-                    xmlns:tile="clr-namespace:TinyMetroWpfLibrary.Controls.Tile">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
 
-    <Style TargetType="tileContentControl:TileContentControl">
+    <Style TargetType="Controls:TileContentControl">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="tileContentControl:TileContentControl">
-                    <tile:Tile>
+                <ControlTemplate TargetType="Controls:TileContentControl">
+                    <Controls:Tile>
                         <Button Name="PARTS_EventButton">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -26,7 +25,7 @@
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                    <Rectangle Fill="{Binding RelativeSource={RelativeSource AncestorType=tileContentControl:TileContentControl, Mode=FindAncestor}, Path=IconBackground}"
+                                    <Rectangle Fill="{Binding RelativeSource={RelativeSource AncestorType=Controls:TileContentControl, Mode=FindAncestor}, Path=IconBackground}"
                                            Width="65"
                                            Height="65"
                                            Grid.Row="0" 
@@ -35,13 +34,13 @@
                                            HorizontalAlignment="Center" 
                                            VerticalAlignment="Center"/>
                                     <Border Grid.Row="1" Grid.Column="1"  VerticalAlignment="Top" Margin="0,5,0,5" HorizontalAlignment="Stretch">
-                                        <ContentPresenter HorizontalAlignment="{Binding RelativeSource={RelativeSource AncestorType=tileContentControl:TileContentControl, Mode=FindAncestor}, Path=TextHorizontalAlignment}"/>
+                                        <ContentPresenter HorizontalAlignment="{Binding RelativeSource={RelativeSource AncestorType=Controls:TileContentControl, Mode=FindAncestor}, Path=TextHorizontalAlignment}"/>
                                     </Border>
                                 </Grid>
                             </Grid>
                         </Button>
                       
-                    </tile:Tile>
+                    </Controls:Tile>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="OuterBorder" Property="Opacity" Value="1"/>

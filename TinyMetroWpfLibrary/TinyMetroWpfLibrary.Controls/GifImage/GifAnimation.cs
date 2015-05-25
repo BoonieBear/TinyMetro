@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace TinyMetroWpfLibrary.Controls.GifImage
+namespace GifImageLib
 {
 
     class GifAnimation : Viewbox

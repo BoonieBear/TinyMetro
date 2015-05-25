@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Data;
 
-namespace TinyMetroWpfLibrary.Controls.Converters
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ThicknessToDoubleConverter : IValueConverter
     {

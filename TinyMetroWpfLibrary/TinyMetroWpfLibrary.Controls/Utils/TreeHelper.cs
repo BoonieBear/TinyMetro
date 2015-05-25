@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
-namespace TinyMetroWpfLibrary.Controls.Utils
+namespace TinyMetroWpfLibrary.Controls
 {
     public static class TreeHelper
     {

@@ -1,10 +1,18 @@
 #define PRINT2OUTPUT
 
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Controls;
 using System.Windows;
+using System.Xml;
+using System.Diagnostics;
+using System.Windows.Input;
+using System.Windows.Media;
 
-namespace TinyMetroWpfLibrary.Controls.DragDropFramework
+
+
+namespace TinyMetroWpfLibrary.Controls
 {
 
     /// <summary>

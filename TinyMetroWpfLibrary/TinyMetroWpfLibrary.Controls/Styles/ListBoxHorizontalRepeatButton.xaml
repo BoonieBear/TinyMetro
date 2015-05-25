@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:listBoxHorizontalRepeatButton="clr-namespace:TinyMetroWpfLibrary.Controls.ListBoxHorizontalRepeatButton">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
     
-    <Style TargetType="listBoxHorizontalRepeatButton:ListBoxHorizontalRepeatButton">
+    <Style TargetType="Controls:ListBoxHorizontalRepeatButton">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="listBoxHorizontalRepeatButton:ListBoxHorizontalRepeatButton">
+                <ControlTemplate TargetType="Controls:ListBoxHorizontalRepeatButton">
                     <Border>
                         <Grid>
                             <Rectangle Name="BackgRectangle"/>

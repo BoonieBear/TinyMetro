@@ -1,9 +1,10 @@
-﻿using System;
+﻿using TinyMetroWpfLibrary.Utility;
+using TinyMetroWpfLibrary.LogUtil;
+using System;
 using System.Windows.Data;
 using System.Windows.Media;
-using TinyMetroWpfLibrary.LogUtil;
-using TinyMetroWpfLibrary.Utility;
-namespace TinyMetroWpfLibrary.Controls.Converters
+
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ColorItemFillConverter : IMultiValueConverter
     {

@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:metroProgressRing="clr-namespace:TinyMetroWpfLibrary.Controls.MetroProgressRing">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
     <SolidColorBrush x:Key="AccentColorBrush" Color="#CCff9829"/>
-    <Style TargetType="metroProgressRing:ProgressRing">
+    <Style TargetType="Controls:ProgressRing">
         <Setter Property="Foreground" Value="{DynamicResource AccentColorBrush}"/>
         <Setter Property="IsHitTestVisible" Value="False"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -11,7 +11,7 @@
         <Setter Property="MinWidth" Value="60"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="metroProgressRing:ProgressRing">
+                <ControlTemplate TargetType="Controls:ProgressRing">
                     <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" >
                         <Border.Resources>
                             <Style x:Key="ProgressRingEllipseStyle" TargetType="Ellipse">

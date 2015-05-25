@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows;
-using System.Windows.Markup;
 using System.Windows.Media;
+using System.Windows.Markup;
 using System.Xml;
 
-namespace TinyMetroWpfLibrary.Controls.DragDropFramework
+
+
+namespace TinyMetroWpfLibrary.Controls
 {
     public class Utilities
     {

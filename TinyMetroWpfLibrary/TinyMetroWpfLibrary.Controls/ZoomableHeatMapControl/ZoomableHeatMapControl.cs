@@ -13,9 +13,7 @@ using System.Linq;
 using TinyMetroWpfLibrary.Utility;
 using System.ComponentModel;
 using TinyMetroWpfLibrary.Utility.ImageBuilder;
-using TinyMetroWpfLibrary.LogUtil;
-
-namespace TinyMetroWpfLibrary.Controls.ZoomableHeatMapControl
+namespace TinyMetroWpfLibrary.Controls
 {
     public class ZoomableHeatMapControl : ContentControl
     {

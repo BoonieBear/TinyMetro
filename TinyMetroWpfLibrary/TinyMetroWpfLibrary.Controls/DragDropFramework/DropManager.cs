@@ -2,9 +2,20 @@
 #define PRINT2OUTPUT    // Output interesting information to Visual Studio's Output window
 
 using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Media;
 using System.Windows;
+using System.Diagnostics;
+using System.Windows.Input;
+using System.Windows.Documents;
+using System.Windows.Shapes;
+using System.Windows.Media.Imaging;
+using System.Windows.Controls;
 
-namespace TinyMetroWpfLibrary.Controls.DragDropFramework
+
+
+namespace TinyMetroWpfLibrary.Controls
 {
 
     /// <summary>

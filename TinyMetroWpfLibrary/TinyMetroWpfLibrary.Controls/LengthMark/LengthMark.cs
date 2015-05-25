@@ -1,7 +1,11 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
-namespace TinyMetroWpfLibrary.Controls.LengthMark
+namespace TinyMetroWpfLibrary.Controls
 {
     public class LengthMark : ContentControl 
     {

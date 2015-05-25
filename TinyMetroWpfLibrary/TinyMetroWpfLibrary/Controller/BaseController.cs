@@ -354,7 +354,7 @@ namespace TinyMetroWpfLibrary.Controller
         /// <param name="message">the message to handle</param>
         public virtual void Handle(ListPickerFullModeRequest message)
         {
-            NavigateToPage("/TinyMetroWpfLibrary;component/Controls/Picker/ListPickerFullMode.xaml", message);
+            NavigateToPage("/TinyMetroWpfLibrary;component/FrameControls/Picker/ListPickerFullMode.xaml", message);
         }
 
         #endregion
@@ -367,7 +367,7 @@ namespace TinyMetroWpfLibrary.Controller
         /// <param name="message">the message to handle</param>
         public virtual void Handle(DatePickerFullModeRequest message)
         {
-            NavigateToPage("/TinyMetroWpfLibrary;component/Controls/Picker/DatePickerFullMode.xaml", message);
+            NavigateToPage("/TinyMetroWpfLibrary;component/FrameControls/Picker/DatePickerFullMode.xaml", message);
         }
 
         #endregion
@@ -380,7 +380,7 @@ namespace TinyMetroWpfLibrary.Controller
         /// <param name="message">the message to handle</param>
         public virtual void Handle(TimePickerFullModeRequest message)
         {
-            NavigateToPage("/TinyMetroWpfLibrary;component/Controls/Picker/TimePickerFullMode.xaml", message);
+            NavigateToPage("/TinyMetroWpfLibrary;component/FrameControls/Picker/TimePickerFullMode.xaml", message);
         }
 
         #endregion
@@ -393,7 +393,7 @@ namespace TinyMetroWpfLibrary.Controller
         /// <param name="message">the message to handle</param>
         public virtual void Handle(TimeSpanPickerFullModeRequest message)
         {
-            NavigateToPage("/TinyMetroWpfLibrary;component/Controls/Picker/TimeSpanPickerFullMode.xaml", message);
+            NavigateToPage("/TinyMetroWpfLibrary;component/FrameControls/Picker/TimeSpanPickerFullMode.xaml", message);
         }
 
         #endregion

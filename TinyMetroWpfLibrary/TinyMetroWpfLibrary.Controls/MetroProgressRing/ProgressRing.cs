@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
-namespace TinyMetroWpfLibrary.Controls.MetroProgressRing
+namespace TinyMetroWpfLibrary.Controls
 {
     [TemplateVisualState(Name = "Large", GroupName = "SizeStates")]
     [TemplateVisualState(Name = "Small", GroupName = "SizeStates")]

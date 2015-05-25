@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls.MetroComboBox">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
     <LinearGradientBrush x:Key="CustomBrush" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="#FFE3F4FC"/>

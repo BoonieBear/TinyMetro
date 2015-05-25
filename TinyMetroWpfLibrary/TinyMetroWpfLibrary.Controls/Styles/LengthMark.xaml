@@ -1,9 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:TinyMetroWpfLibrary.Controls.Converters"
-                    xmlns:lengthMark="clr-namespace:TinyMetroWpfLibrary.Controls.LengthMark">
-    <converters:ConverterToRevertValue x:Key="ConverterToRevertValue"/>
-    <Style TargetType="lengthMark:LengthMark">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
+    <Controls:ConverterToRevertValue x:Key="ConverterToRevertValue"/>
+    <Style TargetType="Controls:LengthMark">
         <Style.Resources>
             <VisualBrush x:Key="LeftBrush">
                 <VisualBrush.Visual>
@@ -28,7 +27,7 @@
         </Style.Resources>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="lengthMark:LengthMark">
+                <ControlTemplate TargetType="Controls:LengthMark">
                     <Grid>
                         <Grid Name="HorizontalTemplate" Visibility="Collapsed">
                             <Grid.ColumnDefinitions>

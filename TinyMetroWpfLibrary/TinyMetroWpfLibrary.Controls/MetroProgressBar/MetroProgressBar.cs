@@ -1,11 +1,12 @@
-﻿using System;
+﻿using TinyMetroWpfLibrary.LogUtil;
+using System;
 using System.Collections;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
-using TinyMetroWpfLibrary.LogUtil;
-namespace TinyMetroWpfLibrary.Controls.MetroProgressBar
+
+namespace TinyMetroWpfLibrary.Controls
 {
     public class MetroProgressBar : ProgressBar
     {

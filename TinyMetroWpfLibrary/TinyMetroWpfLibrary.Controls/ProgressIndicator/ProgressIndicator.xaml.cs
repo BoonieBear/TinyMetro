@@ -7,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace TinyMetroWpfLibrary.Controls.ProgressIndicator
+namespace TinyMetroWpfLibrary.Controls
 {
     /// <summary>
     /// Interaction logic for ProgressIndicator.xaml

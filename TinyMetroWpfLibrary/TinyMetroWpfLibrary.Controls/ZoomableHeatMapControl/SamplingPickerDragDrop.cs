@@ -1,8 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Windows;
-using TinyMetroWpfLibrary.Controls.DragDropFramework;
+using System.Windows.Controls;
+using System.Windows.Shapes;
 
-namespace TinyMetroWpfLibrary.Controls.ZoomableHeatMapControl
+namespace TinyMetroWpfLibrary.Controls
 {
 
     public class SamplingPickerDrag<TContainer, TObject> : DataProviderBase<TContainer, TObject>, IDataProvider

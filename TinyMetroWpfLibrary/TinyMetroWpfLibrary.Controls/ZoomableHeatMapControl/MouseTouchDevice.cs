@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace TinyMetroWpfLibrary.Controls.ZoomableHeatMapControl
+namespace TinyMetroWpfLibrary.Controls
 {
     public class MouseTouchDevice : TouchDevice
     {

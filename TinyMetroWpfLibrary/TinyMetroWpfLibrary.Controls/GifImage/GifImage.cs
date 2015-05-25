@@ -1,14 +1,15 @@
-﻿using System;
+﻿using System.Net;
 using System.IO;
-using System.Net;
 using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Resources;
 using System.Windows.Threading;
+using System.Windows.Resources;
+using System;
 using TinyMetroWpfLibrary.LogUtil;
-namespace TinyMetroWpfLibrary.Controls.GifImage
+
+namespace GifImageLib
 {
     public class GifImageExceptionRoutedEventArgs : RoutedEventArgs
     {

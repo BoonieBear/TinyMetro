@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:indexControl="clr-namespace:TinyMetroWpfLibrary.Controls.IndexControl">
+                    xmlns:Controls="clr-namespace:TinyMetroWpfLibrary.Controls">
     
-    <Style TargetType="indexControl:IndexControl">
+    <Style TargetType="Controls:IndexControl">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="indexControl:IndexControl">
+                <ControlTemplate TargetType="Controls:IndexControl">
                     <Grid Name="Root">
                         <Ellipse Width="36" Height="36"
                                  HorizontalAlignment="Center" 
@@ -21,7 +21,7 @@
             
                         <TextBlock HorizontalAlignment="Center" 
                                        VerticalAlignment="Center"
-                                       Text="{Binding RelativeSource={RelativeSource AncestorType=indexControl:IndexControl}, Path=Index}" 
+                                       Text="{Binding RelativeSource={RelativeSource AncestorType=Controls:IndexControl}, Path=Index}" 
                                        Foreground="White" 
                                        FontSize="15"
                                        FontWeight="Bold"

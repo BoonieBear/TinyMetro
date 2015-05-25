@@ -47,9 +47,6 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TinyMetroWpfLibrary.Controls">
-      <HintPath>..\..\TinyMetroWpfLibrary.Controls\bin\Debug\TinyMetroWpfLibrary.Controls.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -134,6 +131,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TinyMetroWpfLibrary.Controls\TinyMetroWpfLibrary.Controls.csproj">
+      <Project>{7abe44b3-55d7-43aa-9742-88d7359ed0e6}</Project>
+      <Name>TinyMetroWpfLibrary.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\TinyMetroWpfLibrary\TinyMetroWpfLibrary.csproj">
       <Project>{ee62b058-2ebd-462a-ad41-ff6099cd800c}</Project>
       <Name>TinyMetroWpfLibrary</Name>
