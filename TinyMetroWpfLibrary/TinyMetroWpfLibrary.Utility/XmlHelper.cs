@@ -150,6 +150,8 @@ namespace TinyMetroWpfLibrary.Utility
         {
             try
             {
+                if (!File.Exists(xmldoc))
+                    return null;
                 XmlDocument xmlfile = new XmlDocument();
                 xmlfile.Load(xmldoc);
                 XmlNode xn = xmlfile.DocumentElement;
