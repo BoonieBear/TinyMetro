@@ -316,7 +316,7 @@
 
     <Style x:Key="WinTextBlockBase" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource WinFontFamilyNormal}"/>
-        <Setter Property="FontSize" Value="{StaticResource WinFontSizeNormal}"/>
+        <Setter Property="FontSize" Value="{StaticResource WinFontSizeMediumLarge}"/>
         <Setter Property="Foreground" Value="{StaticResource WinForegroundBrush}"/>
         <Setter Property="Margin" Value="{StaticResource WinHorizontalMargin}"/>
     </Style>

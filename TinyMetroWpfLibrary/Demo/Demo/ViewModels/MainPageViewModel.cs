@@ -2,6 +2,7 @@
 using Demo.NavigationEvents;
 using TinyMetroWpfLibrary.Events;
 using TinyMetroWpfLibrary.ViewModel;
+using System.Collections.Generic;
 
 namespace Demo.ViewModels
 {
@@ -27,7 +28,19 @@ namespace Demo.ViewModels
         }
 
         #endregion
-
+        public List<string> ID
+        {
+            get
+            {
+                List<string> id = new List<string>();
+                for (int i = 1; i < 64; i++)
+                {
+                    id.Add(i.ToString());
+                }
+                return id;
+            }
+        }
+                
         #region GoBack Command
 
 

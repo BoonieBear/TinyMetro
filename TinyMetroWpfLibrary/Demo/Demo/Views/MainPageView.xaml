@@ -51,7 +51,10 @@
             <Picker:TimePicker 
             FullModeHeader="Select the time"
             IsTouchSelectionEnabled="True"
-            Value="{Binding SelectedDate, Mode=TwoWay}"/>
+            Value="{Binding SelectedDate, Mode=TwoWay}" FontSize="22"/>
+            <Picker:ListPicker 
+            FullModeHeader="Select the time"
+            ItemsSource="{Binding ID}" FontSize="22"/>
         </StackPanel>
         
     </Grid>
