@@ -16,7 +16,7 @@ namespace TinyMetroWpfLibrary.LogUtil
             // RelativeSearchPath is not null if the calling assembly is a web hosted application i.e. a web site
             var log4NetConfigDirectory = AppDomain.CurrentDomain.RelativeSearchPath ?? AppDomain.CurrentDomain.BaseDirectory;
 
-            var log4NetConfigFilePath = Path.Combine(log4NetConfigDirectory, @"config\log4net.config");
+            var log4NetConfigFilePath = Path.Combine(log4NetConfigDirectory, @"log4net.config");
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(log4NetConfigFilePath));
 
         }
