@@ -15,13 +15,16 @@ namespace TinyMetroWpfLibrary.Utility
         public static string GetFormedString(string src, int dotindex, int length)
         {
             int SrcDotIndex = src.IndexOf('.');
+            if (SrcDotIndex == -1) //没找到，说明是整数
+                SrcDotIndex = src.Length;
             src = src.Replace(".", "");
-            if (SrcDotIndex > dotindex)
+            if (SrcDotIndex > dotindex || src.Length>length)
             {
-                throw (new Exception("GetFormedString输入格式错误！"));
+                throw (new Exception("特殊命令输入格式错误！"));
             }
             int move = dotindex - SrcDotIndex;
-            src = src.PadLeft(src.Length + move, '0');
+            if(move>0)
+                src = src.PadLeft(src.Length + move, '0');
             src = src.PadRight(length, '0');
             return src;
 
