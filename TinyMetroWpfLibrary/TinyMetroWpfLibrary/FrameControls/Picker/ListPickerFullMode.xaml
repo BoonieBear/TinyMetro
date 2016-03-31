@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -32,10 +32,10 @@
                    Name="Header"
             Text="{Binding FullModeHeader}" 
             Style="{StaticResource WinTextGroupHeaderStyle}" 
-            Margin="{StaticResource WinMargin}"/>
+            Margin="12,12,12,0" VerticalAlignment="Bottom"/>
 
         <TextBox
-            Grid.Row="0" Grid.Column="1" Margin="12 12 72 12"
+            Grid.Row="0" Grid.Column="1"  Margin="12,22,240,0"
             BorderBrush="LightGray"
             BorderThickness="1"
             Text="{Binding Path=FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
